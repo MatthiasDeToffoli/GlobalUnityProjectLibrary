@@ -2,13 +2,8 @@
 Library for global C# project link to unity, it's some stuff I create all the time when I work in new unity projects I made a library for use this more easily 
 
 ## Classes
-### Editor
-#### SwitchMenuButtonEditor
-
-This script is link to the ***SwitchMenuButtonListener*** it show a checkbox ScreenToCloseIsParent if this checkbox is checked then so the screen to close is the object parent of the script, if not we need to set the object to close, so the property is showed in the Unity editor.
-
-## Managers
-### AMainManager
+### Managers
+#### AMainManager
 
 This abstract class manage all the managers you will create. For used it you have to create a child of it and use the type of the child as parameter.
 
@@ -30,13 +25,13 @@ This last will get the first manager of this class, it's the only way to access 
   
 *The main goal of this class is to avoid to much singleton*
 
-### ManagedManager
-#### AManagedManager
+#### ManagedManager
+##### AManagedManager
 
 This abstract class represent all the managers which will be managed by the MainManager. It has a property InitOrder this one will say the order of call the Init between two ManagedManagers, if you have MyManagedManagerA which have an InitOrder set to 1 and MyManagedManagerB with an InitOrder set to 2, then the Init of the MyManagedManagerA will be call before the one of MyManagedManagerB.
 In its start, the ManagedManager call a function for add itself in the MainManager.
 
-#### AManagerWithList
+##### AManagerWithList
 
 It's a ***AManagedManager*** containing a list typed T called objects. For create a AManagerWithList you have to specify T
 
@@ -44,6 +39,29 @@ It's a ***AManagedManager*** containing a list typed T called objects. For creat
 public class MyManagerWithListOfCarrot : AManagerWithList<Carrot>
 ```
 
-#### AMenuManager
+##### AMenuManager
 
 ***AManagerWithList*** managing all the ***AMenuScreen***. In its Awake, it will active all AMenuScreen it has in it list for call their awake and Start. And in the Init of the Manager it will active false all it screen. You will have to set the screens in the list using the editor of Unity.
+
+### Menu
+
+#### AMenuScreen
+
+This will represent UI screens (like MainMenu, OptionsMenu...) it has two functions, open and close, wich will SetActive true or false on its gameobject.
+
+#### ButtonListeners
+##### AButtonListener
+
+This class need the UnityEngine.UI.Button component on it object for work. It will listen the events of the button and do actions with it. It will be used for more control and do actions in the C# script and not in the unity Editor, better for encapsulation and control our code. When we click on the button the function OnButtonClicked will be called.
+
+##### ExitAppButtonListener
+
+It's a AButtonListener which will exit the application when the button will be clicked
+
+##### SwitchMenuButtonListener
+It's a AButtonListener which will close a screen and open another  when the button will be clicked. The screen to close can be the parent GameObject or a screen set in the Unity editor. The screen to open will be set in the Unity editor.
+
+### Editor
+#### SwitchMenuButtonEditor
+
+This script is link to the ***SwitchMenuButtonListener*** it show a checkbox ScreenToCloseIsParent if this checkbox is checked then so the screen to close is the object parent of the script, if not we need to set the object to close, so the property is showed in the Unity editor.
