@@ -2,6 +2,20 @@
 Library for global C# project link to unity, it's some stuff I create all the time when I work in new unity projects I made a library for use this more easily 
 
 ## Classes
+### MonoBehaviours
+#### AMonoBehaviour
+this abstract class is a child of Monobehaviour, it add a mathod ListenToEvent call on the Start (used for listening all event the MonoBehavior will have to listen), another method UnlistenToEvent called on the OnDestroy (used for unlistening all events the MonoBehavior listen) and the method AfterStart called after all Start of the project. 
+
+*This function as created because for me the Awake is for initialise own properties of the class, on the Start we can link to other Monobehaviors. So for have interaction and initialisation with all Monobehavior initialized I use the AfterStart because that mean all monobehaviors are initialized.*
+
+#### AMonoBehaviourSingleton
+It's an abstract class representing an ***AMonobehaviour*** which is a singleton. For used it you have to create a child of it and use the type of the child as parameter.
+
+```C#
+public class MyMonoBehaviourSingleton : AMonoBehaviourSingleton<MyMonoBehaviourSingleton>
+```
+So you will can have only one object with this component, if you put two you can select the behavior, it will destroy the old version and keep the new or keep the old and destroy the new but it will never keep several versions. You have another option in the editor for keep the object when you will change scene. So the object will never be destroyed and keep its values.
+
 ### Managers
 #### AMainManager
 
@@ -65,3 +79,15 @@ It's a AButtonListener which will close a screen and open another  when the butt
 #### SwitchMenuButtonEditor
 
 This script is link to the ***SwitchMenuButtonListener*** it show a checkbox ScreenToCloseIsParent if this checkbox is checked then so the screen to close is the object parent of the script, if not we need to set the object to close, so the property is showed in the Unity editor.
+
+### Utils
+#### Constants
+
+Constants global to all the project
+
+#### Events
+##### EventHandler
+Contain all declarations of glabal delegates (link to unity) and Unity events
+
+##### Events
+Contain global events
