@@ -46,7 +46,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
         /// The unic id of the singleton
         /// </summary>
         [HideInInspector]
-        public string unicId
+        public string uniqueId
         {
             get;
             private set;
