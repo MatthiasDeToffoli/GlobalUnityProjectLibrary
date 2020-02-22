@@ -2,20 +2,13 @@
 
 namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners
 {
+    /// <summary>
+    /// Component used for make a button close the app
+    /// </summary>
+    /// <remarks>see also <seealso cref="AButtonListener"/></remarks>
     public class ExitAppButtonListener : AButtonListener
     {
         #region Methods
-        /// <summary>
-        /// Awake of the behaviour
-        /// </summary>
-        /// <remarks>Init all the properties and Fields here</remarks>
-        protected override void Awake(){}
-
-        /// <summary>
-        /// Call the frame after the start
-        /// </summary>
-        protected override void AfterStart(){}
-
         /// <summary>
         /// call when we click on the button
         /// </summary>

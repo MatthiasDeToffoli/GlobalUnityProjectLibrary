@@ -7,7 +7,8 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
     /// <summary>
     /// Abstract class for all managers managed by the <see cref="Managers.AMainManager{TMain}" />
     /// </summary>
-    public abstract class AManagedManager : AMonoBehaviour, IManager
+    /// <remarks>see also <seealso cref="AMonoBehaviour"/> and <seealso cref="IManager"/></remarks>
+    public abstract class AManagedManager: AMonoBehaviour, IManager
     {
         #region Properties
         /// <summary>
@@ -34,7 +35,12 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
         /// <summary>
         /// init the manager, this function is called by the main manager
         /// </summary>
-        public abstract void Init();
+        public virtual void Init() { }
+
+        /// <summary>
+        /// Clear the manager
+        /// </summary>
+        public virtual void Clear() { }
         #endregion //Methods
     }
 }

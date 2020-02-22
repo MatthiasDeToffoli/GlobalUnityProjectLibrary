@@ -6,13 +6,13 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
     /// <summary>
     /// Abstract class implement some functions of MonoBehaviour
     /// </summary>
+    /// <remarks> see also <seealso cref="MonoBehaviour"/></remarks>
     public abstract class AMonoBehaviour : MonoBehaviour
     {
         /// <summary>
         /// Awake of the behaviour
         /// </summary>
-        /// <remarks>Init all the properties and Fields here</remarks>
-        protected abstract void Awake();
+        protected virtual void Awake() { }
 
         /// <summary>
         /// Start of the behaviour
@@ -26,12 +26,12 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
         /// <summary>
         /// Listen all events here
         /// </summary>
-        protected abstract void ListenToEvents();
+        protected virtual void ListenToEvents() { }
 
         /// <summary>
         /// Call the frame after the start
         /// </summary>
-        protected abstract void AfterStart();
+        protected virtual void AfterStart() { }
 
         /// <summary>
         /// Wait one frame before fire the after start
@@ -46,7 +46,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
         /// <summary>
         /// unlisten all events here
         /// </summary>
-        protected abstract void UnlistenToEvents();
+        protected virtual void UnlistenToEvents() { }
 
         /// <summary>
         /// Destroy of the behaviour

@@ -2,12 +2,12 @@
 namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Utils.Events
 {
     /// <summary>
-    /// All project constants
+    /// All project global constants
     /// </summary>
     public static class Constants
     {
         /// <summary>
-        /// All constants used in headers
+        /// All constants used in instpector's headers
         /// </summary>
         public static class Headers
         {

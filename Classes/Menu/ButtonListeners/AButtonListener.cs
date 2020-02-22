@@ -7,6 +7,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
     /// <summary>
     /// Class listen button click
     /// </summary>
+    /// <remarks>see also <seealso cref="AMonoBehaviour"/> annd <see cref="Button"/></remarks>
     [RequireComponent(typeof(Button))]
     public abstract class AButtonListener : AMonoBehaviour
     {

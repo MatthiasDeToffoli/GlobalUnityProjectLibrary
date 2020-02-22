@@ -5,6 +5,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
     /// <summary>
     /// the parent of all menu manager
     /// </summary>
+    /// <remarks>see also <seealso cref="AManagerWithList{T}"/> and <see cref="AMenuScreen"/></remarks>
     public abstract class AMenuManager:AManagerWithList<AMenuScreen>
     {
         #region Methods

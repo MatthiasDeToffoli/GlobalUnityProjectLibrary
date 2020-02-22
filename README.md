@@ -36,6 +36,8 @@ MyManagedManager lManager = MyMainManager.instance.GetFirstManager<MyManagedMana
 ```
   
 This last will get the first manager of this class, it's the only way to access to your managers.
+
+It has a Method clear for clear all the managers et its list
   
 *The main goal of this class is to avoid to much singleton*
 
@@ -84,10 +86,3 @@ This script is link to the ***SwitchMenuButtonListener*** it show a checkbox Scr
 #### Constants
 
 Constants global to all the project
-
-#### Events
-##### EventHandler
-Contain all declarations of glabal delegates (link to unity) and Unity events
-
-##### Events
-Contain global events

@@ -10,7 +10,8 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers
     /// The main manager will managed all the manager
     /// </summary>
     /// <typeparam name="TMain">the type of the main manager use for the singleton instance</typeparam>
-    public abstract class AMainManager<TMain> : AMonoBehaviourSingleton<TMain>, IManager where TMain : AMonoBehaviour, IManager
+    /// <remarks>see also <seealso cref="AMonoBehaviourSingleton{T}"/></remarks>
+    public abstract class AMainManager<TMain> : AMonoBehaviourSingleton<TMain>, IManager where TMain : AMonoBehaviour, IManager, ISingleton
     {
         #region Properties
         /// <summary>
@@ -106,6 +107,19 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Clear the Manager properties
+        /// </summary>
+        public virtual void Clear()
+        {
+            foreach(AManagedManager lManaged in managers)
+            {
+                lManaged.Clear();
+            }
+
+            managers.Clear();
         }
         #endregion //Methods
     }
