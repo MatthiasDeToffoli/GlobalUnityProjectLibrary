@@ -43,7 +43,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
         private bool dontDestroyGameObjectOnLoad = true;
 
         /// <summary>
-        /// The unic id of the singleton
+        /// The unique id of the singleton
         /// </summary>
         [HideInInspector]
         public string uniqueId
