@@ -10,7 +10,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers
     /// The main manager will managed all the manager
     /// </summary>
     /// <typeparam name="TMain">the type of the main manager use for the singleton instance</typeparam>
-    /// <remarks>see also <seealso cref="AMonoBehaviourSingleton{T}"/></remarks>
+    /// <seealso cref="AMonoBehaviourSingleton{T}"/>
     public abstract class AMainManager<TMain> : AMonoBehaviourSingleton<TMain>, IManager where TMain : AMonoBehaviour, IManager, ISingleton
     {
         #region Properties

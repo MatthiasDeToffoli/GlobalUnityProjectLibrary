@@ -6,7 +6,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
     /// <summary>
     /// Abstract class implement some functions of MonoBehaviour
     /// </summary>
-    /// <remarks> see also <seealso cref="MonoBehaviour"/></remarks>
+    /// <seealso cref="MonoBehaviour"/>
     public abstract class AMonoBehaviour : MonoBehaviour
     {
         /// <summary>

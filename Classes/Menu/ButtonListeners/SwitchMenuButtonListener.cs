@@ -5,7 +5,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
     /// <summary>
     /// Class used for make a button close a screen and open another one
     /// </summary>
-    /// <remarks>see also <seealso cref="AButtonListener"/></remarks>
+    /// <seealso cref="AButtonListener"/>
     public class SwitchMenuButtonListener : AButtonListener
     {
         #region Const

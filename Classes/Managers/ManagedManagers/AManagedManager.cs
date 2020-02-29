@@ -7,7 +7,8 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
     /// <summary>
     /// Abstract class for all managers managed by the <see cref="Managers.AMainManager{TMain}" />
     /// </summary>
-    /// <remarks>see also <seealso cref="AMonoBehaviour"/> and <seealso cref="IManager"/></remarks>
+    /// <seealso cref="AMonoBehaviour"/>
+    /// <seealso cref="IManager"/>
     public abstract class AManagedManager: AMonoBehaviour, IManager
     {
         #region Properties

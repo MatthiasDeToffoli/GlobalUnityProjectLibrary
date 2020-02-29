@@ -8,7 +8,8 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
     /// <summary>
     /// Singleton implementing mono behaviour methods
     /// </summary>
-    /// <remarks> see also <seealso cref="AMonoBehaviour"/> and <see cref="ISingleton"/></remarks>
+    /// <seealso cref="AMonoBehaviour"/> 
+    /// <seealso cref="ISingleton"/>
     public abstract class AMonoBehaviourSingleton<T> : AMonoBehaviour, ISingleton where T : AMonoBehaviour, ISingleton
     {
         #region Fields

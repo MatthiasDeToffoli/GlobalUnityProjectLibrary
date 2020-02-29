@@ -7,7 +7,8 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditor
     /// <summary>
     /// Custom Editor for the switch menu button listener class
     /// </summary>
-    /// <remarks>see also <seealso cref="Editor"/> and <see cref="SwitchMenuButtonListener"/></remarks>
+    /// <seealso cref="Editor"/> 
+    /// <seealso cref="SwitchMenuButtonListener"/>
     [CustomEditor(typeof(SwitchMenuButtonListener),true)]
     public class SwitchMenuButtonListenerEditor : Editor
     {

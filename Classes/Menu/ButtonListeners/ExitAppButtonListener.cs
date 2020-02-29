@@ -4,8 +4,8 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
 {
     /// <summary>
     /// Component used for make a button close the app
-    /// </summary>
-    /// <remarks>see also <seealso cref="AButtonListener"/></remarks>
+    /// </summary> 
+    /// <seealso cref="AButtonListener"/>
     public class ExitAppButtonListener : AButtonListener
     {
         #region Methods
