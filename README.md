@@ -89,4 +89,4 @@ Constants global to all the project
 
 ___
 
-*<sub>Made with Unity 2019.3.13f1 , Visual studio Community 2019 and .Net Standard 2.1</sub>*
+*<sub>Made with Unity 2019.3.13f1 and .Net Standard 2.1</sub>*
