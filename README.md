@@ -83,9 +83,18 @@ It's a AButtonListener which will close a screen and open another  when the butt
 This script is link to the ***SwitchMenuButtonListener*** it show a checkbox ScreenToCloseIsParent if this checkbox is checked then so the screen to close is the object parent of the script, if not we need to set the object to close, so the property is showed in the Unity editor.
 
 ### Utils
+#### Enums
+##### GameState
+Enum used for know the game state (in menu, in game, loading, pause) it has an instance in the MainManager
+
 #### Constants
 
 Constants global to all the project
+
+#### GlobalEventHandler
+Static class keeping all global static events wich can be called in the project
+##### Manager
+All global static events used in the managers
 
 ___
 
