@@ -9,6 +9,9 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
     /// <seealso cref="MonoBehaviour"/>
     public abstract class AMonoBehaviour : MonoBehaviour
     {
+        #region Methods
+
+        #region Unity
         /// <summary>
         /// Awake of the behaviour
         /// </summary>
@@ -23,6 +26,15 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
             StartCoroutine(AfterStartCoroutine());
         }
 
+        /// <summary>
+        /// Destroy of the behaviour
+        /// </summary>
+        protected virtual void OnDestroy()
+        {
+            UnlistenToEvents();
+        }
+        #endregion Unity
+        
         /// <summary>
         /// Listen all events here
         /// </summary>
@@ -47,13 +59,6 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
         /// unlisten all events here
         /// </summary>
         protected virtual void UnlistenToEvents() { }
-
-        /// <summary>
-        /// Destroy of the behaviour
-        /// </summary>
-        protected virtual void OnDestroy()
-        {
-            UnlistenToEvents();
-        }
+        #endregion Methods
     }
 }

@@ -24,6 +24,6 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu
         {
             gameObject?.SetActive(false);
         }
-        #endregion //Methods
+        #endregion Methods
     }
 }

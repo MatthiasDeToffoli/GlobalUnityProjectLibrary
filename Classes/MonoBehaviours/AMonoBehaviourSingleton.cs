@@ -17,7 +17,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
         /// unique instance of the class
         /// </summary>
         private static T mInstance;
-        #endregion //Fields
+        #endregion Fields
 
         #region Properties
         /// <summary>
@@ -52,23 +52,22 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
             get;
             private set;
         }
-        #endregion //Properties
+        #endregion Properties
 
         #region Methods
+
+        #region Unity
         /// <summary>
         /// Awake of the behaviour
         /// </summary>
         /// <remarks>Init all the properties and Fields here</remarks>
         override protected void Awake()
         {
-            //find the class name for error message
-            string className = "" + GetType();
-            className = className.Substring(className.LastIndexOf('.')).Replace(".", "");
-
-            string throwMessage = "Attempting to create another instance of " + className + " while it is a singleton.";
-
             if (mInstance != null)
             {
+                //Prepare the error message
+                string throwMessage = "Attempting to create another instance of " + GetType().ToString() + " while it is a singleton.";
+
                 //Chose if we keep the old or the new version
                 if (replaceIfAlreadyExist)
                 {
@@ -99,6 +98,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
 
             if (dontDestroyGameObjectOnLoad) DontDestroyOnLoad(gameObject);
         }
+        #endregion Unity
 
         /// <summary>
         /// Remove the current instance of the singleton and Replace it by another one
@@ -132,6 +132,6 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
                 mInstance = pInstance;
             }
         }
-        #endregion //Methods
+        #endregion Methods
     }
 }

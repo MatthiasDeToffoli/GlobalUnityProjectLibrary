@@ -15,6 +15,6 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
         /// the list of object managed by the manager
         /// </summary>
         public T[] objects;
-        #endregion //Properties
+        #endregion Properties
     }
 }

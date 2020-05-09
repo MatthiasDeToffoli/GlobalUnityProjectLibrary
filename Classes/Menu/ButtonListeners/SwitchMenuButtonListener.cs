@@ -8,7 +8,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
     /// <seealso cref="AButtonListener"/>
     public class SwitchMenuButtonListener : AButtonListener
     {
-        #region Const
+        #region Constants
         /// <summary>
         /// string of the variale screenToCloseIsParent
         /// </summary>
@@ -23,7 +23,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
         /// the title show in inspector for the screen to close property
         /// </summary>
         public const string STRING_TO_CLOSE_TITLE = "Screen to close";
-        #endregion //Const
+        #endregion Constants
 
         #region Properties
         /// <summary>
@@ -44,7 +44,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
         /// <remarks>if it's the parent the property is not used</remarks>
         [HideInInspector]
         public AMenuScreen screenToClose;
-        #endregion //Properties
+        #endregion Properties
 
         #region Methods
         /// <summary>
@@ -66,6 +66,6 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
                 screenToClose?.Close();
             }
         }
-        #endregion //Methods
+        #endregion Methods
     }
 }

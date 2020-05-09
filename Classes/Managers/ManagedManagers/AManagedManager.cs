@@ -1,5 +1,6 @@
 ﻿using fr.matthiasdetoffoli.GlobalProjectCode.Interfaces;
 using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors;
+using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Utils;
 using UnityEngine;
 
 namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager
@@ -16,22 +17,20 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
         /// The order the main manager will call the init method
         /// </summary>
         public uint initOrder;
-        #endregion //Properties
+        #endregion Properties
 
         #region Methods
+
+        #region Unity
         /// <summary>
         /// Start of the behaviour
         /// </summary>
         protected override void Start()
         {
             base.Start();
-            AddToMainManager();
+            GlobalEventHandler.Manager.NotifyManagedManagerCreated(this);
         }
-
-        /// <summary>
-        /// function called for add in this manager in the good main manager
-        /// </summary>
-        protected abstract void AddToMainManager();
+        #endregion Unity
 
         /// <summary>
         /// init the manager, this function is called by the main manager
@@ -42,6 +41,6 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
         /// Clear the manager
         /// </summary>
         public virtual void Clear() { }
-        #endregion //Methods
+        #endregion Methods
     }
 }

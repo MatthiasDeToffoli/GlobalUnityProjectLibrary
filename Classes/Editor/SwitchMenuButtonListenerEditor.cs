@@ -12,6 +12,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditor
     [CustomEditor(typeof(SwitchMenuButtonListener),true)]
     public class SwitchMenuButtonListenerEditor : Editor
     {
+        #region Methods
         /// <summary>
         /// When the inspector is updated
         /// </summary>
@@ -36,6 +37,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditor
 
             serializedObject.ApplyModifiedProperties();
         }
+        #endregion Methods
     }
 }
 

@@ -16,6 +16,6 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
         {
             Application.Quit();
         }
-        #endregion //Methods
+        #endregion Methods
     }
 }

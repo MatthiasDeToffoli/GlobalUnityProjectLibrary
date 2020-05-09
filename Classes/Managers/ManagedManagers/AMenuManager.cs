@@ -10,6 +10,8 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
     public abstract class AMenuManager:AManagerWithList<AMenuScreen>
     {
         #region Methods
+
+        #region Unity
         /// <summary>
         /// Awake of the behaviour
         /// </summary>
@@ -22,6 +24,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
                 lPage?.gameObject.SetActive(true);
             }
         }
+        #endregion Unity
 
         /// <summary>
         /// init the manager, this function is called by the main manager
@@ -37,6 +40,6 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
                     objects[i].gameObject.SetActive(false);
                 }
         }
-        #endregion //Methods
+        #endregion Methods
     }
 }

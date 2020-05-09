@@ -6,6 +6,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Utils.Events
     /// </summary>
     public static class Constants
     {
+        #region Objects
         /// <summary>
         /// All constants used in instpector's headers
         /// </summary>
@@ -13,5 +14,6 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Utils.Events
         {
             public const string OPEN_CLOSE_BTN = "Open / Close Buttons";
         }
+        #endregion Objects
     }
 }

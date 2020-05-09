@@ -1,6 +1,8 @@
 ﻿using fr.matthiasdetoffoli.GlobalProjectCode.Interfaces;
 using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager;
 using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors;
+using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Utils;
+using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Utils.Enums;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,9 +21,17 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers
         /// </summary>
         [HideInInspector]
         public List<AManagedManager> managers;
-        #endregion //Properties
+
+        /// <summary>
+        /// the current state of the game
+        /// </summary>
+        [HideInInspector]
+        public GameState currentGameState;
+        #endregion Properties
 
         #region Method
+
+        #region Unity
         /// <summary>
         /// Awake of the behaviour
         /// </summary>
@@ -30,6 +40,18 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers
         {
             base.Awake();
             managers = new List<AManagedManager>();
+            GlobalEventHandler.Manager.ManagedManagerCreatedEvent += AddManagedManager;
+            currentGameState = GameState.LOADING;
+        }
+        #endregion Unity
+
+        /// <summary>
+        /// Add the manager in the current list
+        /// </summary>
+        /// <param name="pManager">the manager to add</param>
+        private void AddManagedManager(AManagedManager pManager)
+        {
+            managers.Add(pManager);
         }
 
         /// <summary>
@@ -37,6 +59,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers
         /// </summary>
         protected override void AfterStart()
         {
+            GlobalEventHandler.Manager.ManagedManagerCreatedEvent -= AddManagedManager;
             managers.Sort(SortByInitOrder);
             Init();
         }
@@ -121,6 +144,6 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers
 
             managers.Clear();
         }
-        #endregion //Methods
+        #endregion Methods
     }
 }

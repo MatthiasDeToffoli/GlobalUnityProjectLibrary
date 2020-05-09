@@ -33,6 +33,6 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
         {
             gameObject?.GetComponent<Button>()?.onClick.RemoveListener(OnButtonClicked);
         }
-        #endregion //Methods
+        #endregion Methods
     }
 }
