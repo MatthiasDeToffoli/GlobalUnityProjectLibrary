@@ -78,7 +78,7 @@ It's a AButtonListener which will exit the application when the button will be c
 It's a AButtonListener which will close a screen and open another  when the button will be clicked. The screen to close can be the parent GameObject or a screen set in the Unity editor. The screen to open will be set in the Unity editor.
 
 ### Editor
-### GuiStyles
+#### GuiStyles
 
 Static class for implement default GUI styles used in editor
 
