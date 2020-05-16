@@ -8,36 +8,21 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
     /// <seealso cref="AButtonListener"/>
     public class SwitchMenuButtonListener : AButtonListener
     {
-        #region Constants
-        /// <summary>
-        /// string of the variale screenToCloseIsParent
-        /// </summary>
-        public const string STRING_TO_CLOSE_IS_PARENT = "screenToCloseIsParent";
-
-        /// <summary>
-        /// string of the variale screenToClose
-        /// </summary>
-        public const string STRING_TO_CLOSE = "screenToClose";
-
-        /// <summary>
-        /// the title show in inspector for the screen to close property
-        /// </summary>
-        public const string STRING_TO_CLOSE_TITLE = "Screen to close";
-        #endregion Constants
-
-        #region Properties
+        #region Fields
         /// <summary>
         /// The new screen to open
         /// </summary>
         [SerializeField]
-        private AMenuScreen screenToOpen;
+        private AMenuScreen mScreenToOpen;
 
         /// <summary>
         /// If the screen to close is the parent of the button or another screen
         /// </summary>
         [SerializeField]
-        private bool screenToCloseIsParent;
+        private bool mScreenToCloseIsParent;
+        #endregion //Fields
 
+        #region Properties
         /// <summary>
         /// the screen to close
         /// </summary>
@@ -53,9 +38,9 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
         protected override void OnButtonClicked()
         {
             //open the screen to open
-            screenToOpen?.Open();
+            mScreenToOpen?.Open();
 
-            if (screenToCloseIsParent)
+            if (mScreenToCloseIsParent)
             {
                 //if the screen to close is parent so close the parent
                 gameObject.GetComponentInParent<AMenuScreen>()?.Close();

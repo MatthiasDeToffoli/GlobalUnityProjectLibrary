@@ -10,7 +10,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Utils
     {
         #region Objects
         /// <summary>
-        /// All global static event used in the manager
+        /// All global static event used in the managers
         /// </summary>
         public static class Manager
         {

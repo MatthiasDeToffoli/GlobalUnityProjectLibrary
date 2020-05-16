@@ -78,6 +78,10 @@ It's a AButtonListener which will exit the application when the button will be c
 It's a AButtonListener which will close a screen and open another  when the button will be clicked. The screen to close can be the parent GameObject or a screen set in the Unity editor. The screen to open will be set in the Unity editor.
 
 ### Editor
+### GuiStyles
+
+Static class for implement default GUI styles used in editor
+
 #### SwitchMenuButtonEditor
 
 This script is link to the ***SwitchMenuButtonListener*** it show a checkbox ScreenToCloseIsParent if this checkbox is checked then so the screen to close is the object parent of the script, if not we need to set the object to close, so the property is showed in the Unity editor.
