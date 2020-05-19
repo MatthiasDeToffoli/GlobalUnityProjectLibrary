@@ -88,7 +88,8 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditor
                 mScreenToCloseProperty.objectReferenceValue = EditorGUILayout.ObjectField(SCREEN_TO_CLOSE_TITLE, mScreenToCloseProperty.objectReferenceValue, typeof(AMenuScreen),true);
             }
 
-            serializedObject.ApplyModifiedProperties();
+            if (EditorGUI.EndChangeCheck())
+                serializedObject.ApplyModifiedProperties();
 
 
         }
