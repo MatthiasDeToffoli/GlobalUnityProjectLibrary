@@ -1,7 +1,4 @@
-﻿using System.Linq;
-using UnityEngine;
-
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager
+﻿namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager
 {
     /// <summary>
     /// Parent of all manager wich manage an objects array
