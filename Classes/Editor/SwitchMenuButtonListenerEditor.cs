@@ -11,7 +11,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditor
     /// <seealso cref="Editor"/> 
     /// <seealso cref="SwitchMenuButtonListener"/>
     [CustomEditor(typeof(SwitchMenuButtonListener),true)]
-    public class SwitchMenuButtonListenerEditor : Editor
+    internal class SwitchMenuButtonListenerEditor : Editor
     {
         #region Constants
         /// <summary>
