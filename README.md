@@ -2,6 +2,9 @@
 Library for global C# project link to unity, it's some stuff I create all the time when I work in new unity projects I made a library for use this more easily 
 
 ## Classes
+### Attributes
+#### RangeWithStepAttribute
+Attribute which work like the Unity's attribute Range with a step
 
 ### MonoBehaviours
 #### AMonoBehaviour
@@ -83,7 +86,12 @@ It's a AButtonListener which will close a screen and open another  when the butt
 #### CustomEditors
 ##### SwitchMenuButtonEditor
 
-This script is link to the ***SwitchMenuButtonListener*** it show a checkbox ScreenToCloseIsParent if this checkbox is checked then so the screen to close is the object parent of the script, if not we need to set the object to close, so the property is showed in the Unity editor.
+This script is link to the ***SwitchMenuButtonListener*** class, it show a checkbox ScreenToCloseIsParent if this checkbox is checked then so the screen to close is the object parent of the script, if not we need to set the object to close, so the property is showed in the Unity editor.
+
+#### Drawers
+##### RangeWithStepDrawer
+
+Linked to the ***RangeWithStepAttribute*** attribute, it apply the step on the slider in the unity inspector GUI
 
 #### GuiStyles
 
