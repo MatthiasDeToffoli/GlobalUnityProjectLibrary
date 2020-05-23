@@ -10,7 +10,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Utils
         /// <summary>
         /// All constants used in the custom editor
         /// </summary>
-        public static class CustomEditor
+        public static class PersonalEditor
         {
             /// <summary>
             /// Line for separate elements in inspector 

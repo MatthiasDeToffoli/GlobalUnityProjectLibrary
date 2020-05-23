@@ -2,6 +2,7 @@
 Library for global C# project link to unity, it's some stuff I create all the time when I work in new unity projects I made a library for use this more easily 
 
 ## Classes
+
 ### MonoBehaviours
 #### AMonoBehaviour
 this abstract class is a child of Monobehaviour, it add a mathod ListenToEvent call on the Start (used for listening all event the MonoBehavior will have to listen), another method UnlistenToEvent called on the OnDestroy (used for unlistening all events the MonoBehavior listen) and the method AfterStart called after all Start of the project. 
@@ -78,13 +79,15 @@ It's a AButtonListener which will exit the application when the button will be c
 It's a AButtonListener which will close a screen and open another  when the button will be clicked. The screen to close can be the parent GameObject or a screen set in the Unity editor. The screen to open will be set in the Unity editor.
 
 ### Editor
+
+#### CustomEditors
+##### SwitchMenuButtonEditor
+
+This script is link to the ***SwitchMenuButtonListener*** it show a checkbox ScreenToCloseIsParent if this checkbox is checked then so the screen to close is the object parent of the script, if not we need to set the object to close, so the property is showed in the Unity editor.
+
 #### GuiStyles
 
 Static class for implement default GUI styles used in editor
-
-#### SwitchMenuButtonEditor
-
-This script is link to the ***SwitchMenuButtonListener*** it show a checkbox ScreenToCloseIsParent if this checkbox is checked then so the screen to close is the object parent of the script, if not we need to set the object to close, so the property is showed in the Unity editor.
 
 ### Utils
 #### Enums

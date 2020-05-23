@@ -3,7 +3,7 @@ using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners;
 using UnityEditor;
 using UnityEngine;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditor
+namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditors.CustomEditors
 {
     /// <summary>
     /// Custom Editor for the switch menu button listener class
@@ -77,10 +77,10 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditor
         /// </summary>
         public override void OnInspectorGUI()
         {
+            EditorGUI.BeginChangeCheck();
+
             EditorGUILayout.PropertyField(mScreenToOpenProperty, new GUIContent(SCREEN_TO_OPEN_TITLE));
             EditorGUILayout.PropertyField(mScreenToCloseIsParentProperty, new GUIContent(SCREEN_TO_CLOSE_IS_PARENT_TITLE));
-
-            EditorGUI.BeginChangeCheck();
 
             //we show the screen to close in function of the boolean value
             if (!mScreenToCloseIsParentProperty.boolValue)

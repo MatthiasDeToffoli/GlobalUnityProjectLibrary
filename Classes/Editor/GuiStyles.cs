@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditor
+namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditors
 {
     /// <summary>
     /// Static class for implement default GUI styles used in editor
