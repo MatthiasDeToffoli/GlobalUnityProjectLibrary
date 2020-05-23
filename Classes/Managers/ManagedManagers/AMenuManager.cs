@@ -19,7 +19,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
         protected override void Awake()
         {
             //Active all pages for call their Awake and start
-            foreach(AMenuScreen lPage in objects)
+            foreach(AMenuScreen lPage in items)
             {
                 lPage?.gameObject.SetActive(true);
             }
@@ -31,13 +31,13 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
         /// </summary>
         public override void Init()
         {
-            int l = objects.Length;
+            int l = items.Count;
 
             //Unactive all screen for unshow them
             if (l > 0)
                 for(int i = 1; i < l; i++)
                 {
-                    objects[i].gameObject.SetActive(false);
+                    items[i].gameObject.SetActive(false);
                 }
         }
         #endregion Methods

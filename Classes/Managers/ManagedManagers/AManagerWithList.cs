@@ -1,4 +1,6 @@
-﻿namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager
+﻿using System.Collections.Generic;
+
+namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager
 {
     /// <summary>
     /// Parent of all manager wich manage an objects array
@@ -11,7 +13,7 @@
         /// <summary>
         /// the list of object managed by the manager
         /// </summary>
-        public T[] objects;
+        public List<T> items;
         #endregion Properties
     }
 }
