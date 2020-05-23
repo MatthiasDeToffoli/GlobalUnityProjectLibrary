@@ -95,8 +95,6 @@ Enum used for know the game state (in menu, in game, loading, pause) it has an i
 
 Constants global to all the project
 
-#### GlobalEventHandler
-Static class keeping all global static events wich can be called in the project
 ##### Manager
 All global static events used in the managers
 

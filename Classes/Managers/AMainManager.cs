@@ -40,7 +40,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers
         {
             base.Awake();
             managers = new List<AManagedManager>();
-            GlobalEventHandler.Manager.ManagedManagerCreatedEvent += AddManagedManager;
+            managers.AddRange(FindObjectsOfType<AManagedManager>());
             currentGameState = GameState.LOADING;
         }
         #endregion Unity
@@ -49,7 +49,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers
         /// Add the manager in the current list
         /// </summary>
         /// <param name="pManager">the manager to add</param>
-        private void AddManagedManager(AManagedManager pManager)
+        public void AddManagedManager(AManagedManager pManager)
         {
             managers.Add(pManager);
         }
@@ -59,7 +59,6 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers
         /// </summary>
         protected override void AfterStart()
         {
-            GlobalEventHandler.Manager.ManagedManagerCreatedEvent -= AddManagedManager;
             managers.Sort(SortByInitOrder);
             Init();
         }

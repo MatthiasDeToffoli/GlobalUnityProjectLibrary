@@ -19,18 +19,6 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
         #endregion Properties
 
         #region Methods
-
-        #region Unity
-        /// <summary>
-        /// Start of the behaviour
-        /// </summary>
-        protected override void Start()
-        {
-            base.Start();
-            GlobalEventHandler.Manager.NotifyManagedManagerCreated(this);
-        }
-        #endregion Unity
-
         /// <summary>
         /// init the manager, this function is called by the main manager
         /// </summary>
