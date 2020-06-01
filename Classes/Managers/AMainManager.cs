@@ -88,7 +88,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers
         }
 
         /// <summary>
-        /// init the manager, this function is called by the main manager
+        /// init the manager
         /// </summary>
         public void Init()
         {

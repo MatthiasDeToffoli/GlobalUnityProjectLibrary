@@ -20,8 +20,9 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
 
         #region Methods
         /// <summary>
-        /// init the manager, this function is called by the main manager
+        /// init the manager
         /// </summary>
+        /// <remarks>this function is called by the main manager</remarks>
         public virtual void Init() { }
 
         /// <summary>
