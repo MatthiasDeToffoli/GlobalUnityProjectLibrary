@@ -38,7 +38,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditors.Dr
             {
                 //Use integer slider and format the value for add the step on it
                 mIntValue = lAttribute.FormatWithStep(
-                    EditorGUI.IntSlider(position, label, mIntValue, (int)lAttribute.min, (int)lAttribute.max));
+                    EditorGUI.IntSlider(position, label, property.intValue, (int)lAttribute.min, (int)lAttribute.max));
                 //Set the value in the property
                 property.intValue = mIntValue;
             }
@@ -46,10 +46,10 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditors.Dr
             {
                 //Use slider and format the value for add the step on it
                 mFloatValue = lAttribute.FormatWithStep(
-                    EditorGUI.Slider(position, label, mFloatValue, lAttribute.min, lAttribute.max));
+                    EditorGUI.Slider(position, label, property.floatValue, lAttribute.min, lAttribute.max));
 
                 //Set the value in the property
-                property.floatValue = mFloatValue * lAttribute.step;
+                property.floatValue = mFloatValue;
             }
         }
         #endregion Methods
