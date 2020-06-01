@@ -74,26 +74,33 @@ This will represent UI screens (like MainMenu, OptionsMenu...) it has two functi
 
 This class need the UnityEngine.UI.Button component on it object for work. It will listen the events of the button and do actions with it. It will be used for more control and do actions in the C# script and not in the unity Editor, better for encapsulation and control our code. When we click on the button the function OnButtonClicked will be called.
 
+##### CloseScreenButtonListener
+It's a AButtonListener which will close a screen when the button will be clicked. The screen to close can be the parent GameObject or a screen set in the Unity editor.
+
 ##### ExitAppButtonListener
 
 It's a AButtonListener which will exit the application when the button will be clicked
 
-##### SwitchMenuButtonListener
-It's a AButtonListener which will close a screen and open another  when the button will be clicked. The screen to close can be the parent GameObject or a screen set in the Unity editor. The screen to open will be set in the Unity editor.
+##### SwitchScreenButtonListener
+It's a Close Screen Button Listener which will open a screen when the button will be clicked, in more than close another one. The screen to open will be set in the Unity editor.
 
 ### Editor
 
 #### CustomEditors
-##### SwitchMenuButtonEditor
+##### CloseScreenButtonListenerEditor
 
-This script is link to the ***SwitchMenuButtonListener*** class, it show a checkbox ScreenToCloseIsParent if this checkbox is checked then so the screen to close is the object parent of the script, if not we need to set the object to close, so the property is showed in the Unity editor.
+This script is linked to the ***CloseScreenButtonListener*** class, it show a checkbox ScreenToCloseIsParent if this checkbox is checked then so the screen to close is the object parent of the script, if not we need to set the object to close, so the property is showed in the Unity editor.
+
+##### SwitchScreenButtonEditor
+
+This script is linked to the ***SwitchScreenButtonListener*** class, it is a child of ***CloseScreenButtonListenerEditor***, so it work like it but add the possibility to set a screen to open.
 
 #### Drawers
 ##### RangeWithStepDrawer
 
 Linked to the ***RangeWithStepAttribute*** attribute, it apply the step on the slider in the unity inspector GUI
 
-#### GuiStyles
+#### GUIStyles
 
 Static class for implement default GUI styles used in editor
 
