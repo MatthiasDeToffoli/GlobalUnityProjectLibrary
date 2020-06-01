@@ -5,7 +5,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditors
     /// <summary>
     /// Static class for implement default GUI styles used in editor
     /// </summary>
-    public static class GuiStyles
+    public static class GUIStyles
     {
         #region Fields
         /// <summary>
