@@ -46,14 +46,10 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
         /// <remarks>this function is called by the main manager</remarks>
         public override void Init()
         {
-            int l = items.Count;
-
-            //Unactive all screen for unshow them
-            if (l > 0)
-                for(int i = 1; i < l; i++)
-                {
-                    items[i].gameObject.SetActive(false);
-                }
+            foreach(AMenuScreen lScreen in items)
+            {
+                lScreen?.gameObject.SetActive(false);
+            }
         }
 
 

@@ -12,7 +12,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu
         /// <summary>
         /// show the screen
         /// </summary>
-        public void Open()
+        public virtual void Open()
         {
             gameObject?.SetActive(true);
         }
@@ -20,7 +20,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu
         /// <summary>
         /// unshow the screen
         /// </summary>
-        public void Close()
+        public virtual void Close()
         {
             gameObject?.SetActive(false);
         }
