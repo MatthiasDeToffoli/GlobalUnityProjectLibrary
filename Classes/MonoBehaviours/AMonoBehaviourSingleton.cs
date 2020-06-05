@@ -63,6 +63,8 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
         /// <remarks>Init all the properties and Fields here</remarks>
         override protected void Awake()
         {
+            base.Awake();
+
             if (mInstance != null)
             {
                 //Prepare the error message

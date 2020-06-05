@@ -59,6 +59,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers
         /// </summary>
         protected override void AfterStart()
         {
+            base.AfterStart();
             managers.Sort(SortByInitOrder);
             Init();
         }

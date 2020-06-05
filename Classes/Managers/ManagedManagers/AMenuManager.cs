@@ -32,7 +32,9 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
         /// <remarks>Init all the properties and Fields here</remarks>
         protected override void Awake()
         {
-            //Active all pages for call their Awake and start
+            base.Awake();
+
+            //Active all pages for call their Awake
             foreach(AMenuScreen lPage in items)
             {
                 lPage?.gameObject.SetActive(true);
