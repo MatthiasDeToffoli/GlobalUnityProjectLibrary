@@ -59,14 +59,14 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditors.Cu
         {
             //the to open part
             EditorGUILayout.LabelField(OPEN_TITLE, GUIStyles.titleStyle);
-            EditorGUILayout.LabelField(string.Empty);
+            EditorGUILayout.Space();
             EditorGUILayout.PropertyField(mScreenToOpenProperty, new GUIContent(SCREEN_TO_OPEN_TITLE));
             EditorGUILayout.LabelField(Constants.PersonalEditor.SEPARATOR);
-            EditorGUILayout.LabelField(string.Empty);
+            EditorGUILayout.Space();
 
             //the to close part
             EditorGUILayout.LabelField(CLOSE_TITLE, GUIStyles.titleStyle);
-            EditorGUILayout.LabelField(string.Empty);
+            EditorGUILayout.Space();
             base.CreateProperties();
         }
         #endregion Methods

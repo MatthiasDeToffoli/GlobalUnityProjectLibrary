@@ -6,6 +6,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Attributes
     /// <summary>
     /// Attribute for define a range with a step
     /// </summary>
+    /// <seealso cref="PropertyAttribute"/>
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
     public class RangeWithStepAttribute : PropertyAttribute
     {

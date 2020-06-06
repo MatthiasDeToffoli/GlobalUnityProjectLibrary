@@ -1,5 +1,4 @@
 ﻿using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Attributes;
-using System;
 using UnityEditor;
 using UnityEngine;
 
@@ -8,6 +7,8 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditors.Dr
     /// <summary>
     /// Property drawer for the attribute RangeWithStep
     /// </summary>
+    /// <seealso cref="PropertyDrawer"/>
+    /// <seealso cref="RangeWithStepAttribute"/>
     [CustomPropertyDrawer(typeof(RangeWithStepAttribute))]
     internal class RangeWithStepDrawer : PropertyDrawer
     {
@@ -27,29 +28,29 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditors.Dr
         /// <summary>
         /// When the gui is refresh
         /// </summary>
-        /// <param name="position">the gui position</param>
-        /// <param name="property">the property link to the gui</param>
-        /// <param name="label">the label of the gui</param>
-        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+        /// <param name="pPosition">the gui position</param>
+        /// <param name="pProperty">the property link to the gui</param>
+        /// <param name="pLabel">the label of the gui</param>
+        public override void OnGUI(Rect pPosition, SerializedProperty pProperty, GUIContent pLabel)
         {
             RangeWithStepAttribute lAttribute = attribute as RangeWithStepAttribute;
 
-            if (property.propertyType == SerializedPropertyType.Integer)
+            if (pProperty.propertyType == SerializedPropertyType.Integer)
             {
                 //Use integer slider and format the value for add the step on it
                 mIntValue = lAttribute.FormatWithStep(
-                    EditorGUI.IntSlider(position, label, property.intValue, (int)lAttribute.min, (int)lAttribute.max));
+                    EditorGUI.IntSlider(pPosition, pLabel, pProperty.intValue, (int)lAttribute.min, (int)lAttribute.max));
                 //Set the value in the property
-                property.intValue = mIntValue;
+                pProperty.intValue = mIntValue;
             }
-            else if(property.propertyType == SerializedPropertyType.Float)
+            else if(pProperty.propertyType == SerializedPropertyType.Float)
             {
                 //Use slider and format the value for add the step on it
                 mFloatValue = lAttribute.FormatWithStep(
-                    EditorGUI.Slider(position, label, property.floatValue, lAttribute.min, lAttribute.max));
+                    EditorGUI.Slider(pPosition, pLabel, pProperty.floatValue, lAttribute.min, lAttribute.max));
 
                 //Set the value in the property
-                property.floatValue = mFloatValue;
+                pProperty.floatValue = mFloatValue;
             }
         }
         #endregion Methods

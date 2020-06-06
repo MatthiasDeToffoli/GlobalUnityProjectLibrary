@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Attributes;
+using System.Collections.Generic;
 
 namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager
 {
