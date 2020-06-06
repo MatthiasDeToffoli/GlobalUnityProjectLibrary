@@ -3,6 +3,19 @@ Library for global C# project link to unity, it's some stuff I create all the ti
 
 ## Classes
 ### Attributes
+#### CustomLabelAttribute
+Attribute used for change the label text of a property in the unity inspector
+
+*This attribute don't work on arrays, lists or their elements*
+
+#### CustomElementLabelAttribute
+Attribute used for change the label text of arrays or lists elements.
+
+It can replace the element label by one word keeping the index of the element. 
+It can also replace some elements by words without the index (the words are set in a array of nullable string), in this case if the elements index not match it will write element + the index or a word you chosed + the index.
+
+*This attribute don't work only on arrays or lists elements*
+
 #### RangeWithStepAttribute
 Attribute which work like the Unity's attribute Range with a step
 
@@ -96,9 +109,17 @@ This script is linked to the ***CloseScreenButtonListener*** class, it show a ch
 This script is linked to the ***SwitchScreenButtonListener*** class, it is a child of ***CloseScreenButtonListenerEditor***, so it work like it but add the possibility to set a screen to open.
 
 #### Drawers
+#### CustomLabelDrawers
+
+Linked to the ***CustomLabel*** attribute, it change the property's label
+
+#### CustomElementLabelDrawer
+
+Linked to the ***CustomElementLabel*** attribute, it change the Element's label
+
 ##### RangeWithStepDrawer
 
-Linked to the ***RangeWithStepAttribute*** attribute, it apply the step on the slider in the unity inspector GUI
+Linked to the ***RangeWithStep*** attribute, it apply the step on the slider in the unity inspector GUI
 
 #### GUIStyles
 
