@@ -97,6 +97,17 @@ It's a AButtonListener which will exit the application when the button will be c
 ##### SwitchScreenButtonListener
 It's a Close Screen Button Listener which will open a screen when the button will be clicked, in more than close another one. The screen to open will be set in the Unity editor.
 
+### Pooling
+#### GameObjectPoolElement
+Pool element which will create game objects
+
+#### PoolInitializerContainer
+Pool initializer which contain a list of ***GameObjectElement*** (this last can be updated in unity inspector)
+*Overide this class for add more list editables, and overide the property elements for used all your list*
+
+#### APoolManager
+Manager which manage all the pools and their container. It wait a typeparam for it Initializer container which is a ***PoolInitializerContainer***.
+
 ### Editor
 
 #### CustomEditors
