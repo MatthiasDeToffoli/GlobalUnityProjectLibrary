@@ -9,14 +9,19 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditors
     {
         #region Fields
         /// <summary>
-        /// the style for a title in gui
+        /// The style for a title in gui
         /// </summary>
         private static GUIStyle mTitleStyle;
+
+        /// <summary>
+        /// The style for an error in gui
+        /// </summary>
+        private static GUIStyle mErrorStyle;
         #endregion Fields
 
         #region Properties
         /// <summary>
-        /// the style for a title in gui
+        /// The style for a title in gui
         /// </summary>
         public static GUIStyle titleStyle
         {
@@ -29,6 +34,24 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditors
                     mTitleStyle.fontStyle = FontStyle.Bold;
                 }
                 return mTitleStyle;
+            }
+        }
+
+        /// <summary>
+        /// The style for an error in gui
+        /// </summary>
+        public static GUIStyle errorStyle
+        {
+            get
+            {
+                if(mErrorStyle == null)
+                {
+                    mErrorStyle = new GUIStyle();
+                    mErrorStyle.normal.textColor = Color.red;
+                    mErrorStyle.fontSize = 12;
+                    mErrorStyle.fontStyle = FontStyle.BoldAndItalic;
+                }
+                return mErrorStyle;
             }
         }
         #endregion Properties
