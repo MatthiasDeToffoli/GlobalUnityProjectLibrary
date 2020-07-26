@@ -103,6 +103,7 @@ Pool element which will create game objects
 
 #### PoolInitializerContainer
 Pool initializer which contain a list of ***GameObjectElement*** (this last can be updated in unity inspector)
+
 *Overide this class for add more list editables, and overide the property elements for used all your list*
 
 #### APoolManager
@@ -150,4 +151,4 @@ All global static events used in the managers
 
 ___
 
-*<sub>Made with Unity 2019.3.13f1 and .Net Standard 2.1</sub>*
+*<sub>Made with Unity 2020.1.0f1 and .Net Standard 2.1</sub>*
