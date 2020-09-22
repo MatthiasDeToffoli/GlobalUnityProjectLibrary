@@ -109,6 +109,17 @@ Pool initializer which contain a list of ***GameObjectElement*** (this last can 
 #### APoolManager
 Manager which manage all the pools and their container. It wait a typeparam for it Initializer container which is a ***PoolInitializerContainer***.
 
+### VisualFeebacks
+
+#### AVisualFeedBack
+Abstract class used for show a visual feedback with code
+
+#### AShortLivedVisualFeedback
+***AVisualFeedBack*** which will desapear after a time
+
+#### AVisualFeedBacksManager
+Manager used for manage all visual feedbacks
+
 ### Editor
 
 #### CustomEditors

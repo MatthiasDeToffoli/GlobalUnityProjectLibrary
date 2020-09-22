@@ -1,4 +1,5 @@
 ﻿using fr.matthiasdetoffoli.GlobalProjectCode.Interfaces.Pooling;
+using System;
 using System.Security.Cryptography;
 using UnityEngine;
 
@@ -24,6 +25,17 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
         }
         #endregion Fields
 
+        #region Properties
+        /// <summary>
+        /// THe unic id of the feeback
+        /// </summary>
+        public string unicId
+        {
+            get;
+            private set;
+        }
+        #endregion Properties
+
         #region Constructors
         /// <summary>
         /// Initialize an instance of the class <see cref="AVisualFeedBack"/>
@@ -32,6 +44,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
         public AVisualFeedBack(IPoolManager pPoolManager)
         {
             mPoolManager = pPoolManager;
+            unicId = Guid.NewGuid().ToString();
         }
         #endregion Constructors
 

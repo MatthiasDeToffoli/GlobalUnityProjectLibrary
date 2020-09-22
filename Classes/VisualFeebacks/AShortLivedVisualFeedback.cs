@@ -17,11 +17,6 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
         /// The type of wait for the coroutine
         /// </summary>
         protected CoroutineTypeOfWait mTypeOfWait;
-
-        /// <summary>
-        /// The time to wait for the couroutine
-        /// </summary>
-        protected float mTimeToWait;
         #endregion Fields
 
         #region Properties
@@ -29,6 +24,11 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
         /// The instance of the coroutine
         /// </summary>
         public IEnumerator coroutineUnShowInstance;
+
+        /// <summary>
+        /// The time to wait for the couroutine
+        /// </summary>
+        public float timeToWait;
         #endregion Properties
 
         #region Constructors
@@ -37,12 +37,10 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
         /// </summary>
         /// <param name="pPoolManager"></param>
         /// <param name="pTypeOfWait"></param>
-        /// <param name="pTime"></param>
-        public AShortLivedVisualFeedback(IPoolManager pPoolManager, CoroutineTypeOfWait pTypeOfWait, float pTime) 
+        public AShortLivedVisualFeedback(IPoolManager pPoolManager, CoroutineTypeOfWait pTypeOfWait) 
             : base(pPoolManager)
         {
             mTypeOfWait = pTypeOfWait;
-            mTimeToWait = pTime;
         }
         #endregion Constructors
 
@@ -65,7 +63,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
         /// <param name="pObject">the object to unshow</param>
         public override void UnShow(GameObject pObject)
         {
-            
+            coroutineUnShowInstance = null;
             base.UnShow(pObject);
         }
 
@@ -78,11 +76,11 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
         {
             if(mTypeOfWait == CoroutineTypeOfWait.SECONDS)
             {
-                yield return new WaitForSeconds(mTimeToWait);
+                yield return new WaitForSeconds(timeToWait);
             }
             else
             {
-                for(int i = 0; i < mTimeToWait; i++)
+                for(int i = 0; i < timeToWait; i++)
                 {
                     switch (mTypeOfWait)
                     {
