@@ -1,7 +1,6 @@
 ﻿using fr.matthiasdetoffoli.GlobalProjectCode.Interfaces;
 using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager;
 using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors;
-using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Utils;
 using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Utils.Enums;
 using System.Collections.Generic;
 using UnityEngine;

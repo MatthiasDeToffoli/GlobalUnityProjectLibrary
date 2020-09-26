@@ -1,7 +1,6 @@
 ﻿using fr.matthiasdetoffoli.GlobalProjectCode.Classes.Pooling;
 using fr.matthiasdetoffoli.GlobalProjectCode.Interfaces.Pooling;
 using fr.matthiasdetoffoli.GlobalProjectCode.Interfaces.Pooling.PoolElements;
-using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Attributes;
 using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager;
 using UnityEngine;
 

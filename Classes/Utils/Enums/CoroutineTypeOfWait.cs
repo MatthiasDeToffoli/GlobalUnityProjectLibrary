@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Utils.Enums
+﻿namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Utils.Enums
 {
     /// <summary>
     /// Enum used for say what type of wait we will use in a coroutine
