@@ -152,6 +152,8 @@ Static class for implement default GUI styles used in editor
 #### Enums
 ##### GameState
 Enum used for know the game state (in menu, in game, loading, pause) it has an instance in the MainManager
+##### CoroutineTypeOfWait
+Enum used for know if we want to wait the end of frames, seconds or fixed updated
 
 #### Constants
 

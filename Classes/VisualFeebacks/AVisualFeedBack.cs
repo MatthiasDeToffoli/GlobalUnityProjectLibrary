@@ -1,6 +1,5 @@
 ﻿using fr.matthiasdetoffoli.GlobalProjectCode.Interfaces.Pooling;
 using System;
-using System.Security.Cryptography;
 using UnityEngine;
 
 namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
@@ -12,17 +11,17 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
     {
         #region Fields
         /// <summary>
-        /// The pool manager
-        /// </summary>
-        private IPoolManager mPoolManager;
-
-        /// <summary>
         /// The ID of the pool for get the visual feedback
         /// </summary>
         protected abstract string mPoolID
         {
             get;
         }
+
+        /// <summary>
+        /// the game object of the feedback show
+        /// </summary>
+        protected GameObject mObject;
         #endregion Fields
 
         #region Properties
@@ -40,10 +39,8 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
         /// <summary>
         /// Initialize an instance of the class <see cref="AVisualFeedBack"/>
         /// </summary>
-        /// <param name="pPoolManager">the pool manager</param>
-        public AVisualFeedBack(IPoolManager pPoolManager)
+        public AVisualFeedBack()
         {
-            mPoolManager = pPoolManager;
             unicId = Guid.NewGuid().ToString();
         }
         #endregion Constructors
@@ -52,41 +49,39 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
         /// <summary>
         /// Show the visual feed back
         /// </summary>
+        /// <param name="pPoolManager">the pool manager</param>
         /// <param name="pNewTransform">the transforms contains position size and rotation of the feed back</param>
         /// <remarks>it search a game object in the pool</remarks>
-        public virtual GameObject Show(Transform pNewTransform)
+        public virtual void Show(IPoolManager pPoolManager, Transform pNewTransform)
         {
-            GameObject lGO = null;
-
-            if (mPoolManager != null)
+            if (pPoolManager != null)
             {
                 //Get the gameobject from the pool
-                 lGO = mPoolManager.GetElement<GameObject>(mPoolID);
+                 mObject = pPoolManager.GetElement<GameObject>(mPoolID);
 
                 //set the local scale
-                lGO.transform.localScale = pNewTransform.localScale;
+                mObject.transform.localScale = pNewTransform.localScale;
 
                 //Set the new position
-                lGO.transform.position = pNewTransform.position;
+                mObject.transform.position = pNewTransform.position;
 
                 //Set the rotation
-                lGO.transform.rotation = pNewTransform.rotation;
+                mObject.transform.rotation = pNewTransform.rotation;
 
-                lGO.SetActive(true);
+                mObject.SetActive(true);
             }
-
-            return lGO;
         }
 
         /// <summary>
         /// Unshow the feedback
         /// </summary>
-        /// <param name="pObject">the object to unshow</param>
-        public virtual void UnShow(GameObject pObject)
+        /// <param name="pPoolManager">the pool manager</param>
+        public virtual void UnShow(IPoolManager pPoolManager)
         {
-            if(mPoolManager != null)
+            if(pPoolManager != null)
             {
-                mPoolManager.StockElement(mPoolID, pObject);
+                pPoolManager.StockElement(mPoolID, mObject);
+                mObject = null;
             }
         }
         #endregion Methods

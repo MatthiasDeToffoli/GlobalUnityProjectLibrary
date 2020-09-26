@@ -1,5 +1,4 @@
-﻿using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Attributes;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager
 {
@@ -16,5 +15,16 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
         /// </summary>
         public List<T> items;
         #endregion Properties
+
+        #region Methods
+        /// <summary>
+        /// Awake of the behaviour
+        /// </summary>
+        protected override void Awake()
+        {
+            base.Awake();
+            items = new List<T>();
+        }
+        #endregion Methods
     }
 }

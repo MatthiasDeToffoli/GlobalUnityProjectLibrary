@@ -1,6 +1,5 @@
 ﻿using fr.matthiasdetoffoli.GlobalProjectCode.Interfaces.Pooling;
 using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Utils.Enums;
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -35,10 +34,9 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
         /// <summary>
         /// Initialize an instance of the class <see cref="AShortLivedVisualFeedback"/>
         /// </summary>
-        /// <param name="pPoolManager"></param>
         /// <param name="pTypeOfWait"></param>
-        public AShortLivedVisualFeedback(IPoolManager pPoolManager, CoroutineTypeOfWait pTypeOfWait) 
-            : base(pPoolManager)
+        public AShortLivedVisualFeedback(CoroutineTypeOfWait pTypeOfWait) 
+            : base()
         {
             mTypeOfWait = pTypeOfWait;
         }
@@ -48,31 +46,31 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
         /// <summary>
         /// Show the visual feed back
         /// </summary>
+        /// <param name="pPoolManager">the pool manager</param>
         /// <param name="pNewTransform">the transforms contains position size and rotation of the feed back</param>
         /// <remarks>it search a game object in the pool</remarks>
-        public override GameObject Show(Transform pNewTransform)
+        public override void Show(IPoolManager pPoolManager, Transform pNewTransform)
         {
-            GameObject lGO = base.Show(pNewTransform);
-            coroutineUnShowInstance = UnShowCoroutine(lGO);
-            return lGO;
+            base.Show(pPoolManager, pNewTransform);
+            coroutineUnShowInstance = UnShowCoroutine(pPoolManager);
         }
 
         /// <summary>
         /// Unshow the feedback
         /// </summary>
-        /// <param name="pObject">the object to unshow</param>
-        public override void UnShow(GameObject pObject)
+        /// <param name="pPoolManager">the pool manager</param>
+        public override void UnShow(IPoolManager pPoolManager)
         {
             coroutineUnShowInstance = null;
-            base.UnShow(pObject);
+            base.UnShow(pPoolManager);
         }
 
         /// <summary>
         /// The coroutine for call unshow
         /// </summary>
-        /// <param name="pObject">the object to unshow</param>
+        /// <param name="pPoolManager">the pool manager</param>
         /// <returns></returns>
-        private IEnumerator UnShowCoroutine(GameObject pObject)
+        private IEnumerator UnShowCoroutine(IPoolManager pPoolManager)
         {
             if(mTypeOfWait == CoroutineTypeOfWait.SECONDS)
             {
@@ -95,7 +93,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
                 }
             }
 
-            UnShow(pObject);
+            UnShow(pPoolManager);
         }
         #endregion Methods
     }

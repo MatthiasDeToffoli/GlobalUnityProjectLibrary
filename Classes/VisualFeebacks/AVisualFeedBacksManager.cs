@@ -1,6 +1,6 @@
-﻿using fr.matthiasdetoffoli.GlobalProjectCode.Interfaces;
+﻿using fr.matthiasdetoffoli.GlobalProjectCode.Interfaces.Pooling;
 using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
@@ -13,31 +13,27 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
     {
         #region Fields
         /// <summary>
-        /// Contain all feedback show
+        /// The pool manager
         /// </summary>
-        protected Dictionary<string,GameObject> mListFeedBackShowed;
+        protected abstract IPoolManager mPoolManager
+        {
+            get;
+            set;
+        }
         #endregion Fields
 
         #region Methods
-
-        #region Unity
-        /// <summary>
-        /// Awake of the behaviour
-        /// </summary>
-        protected override void Awake()
-        {
-            base.Awake();
-            mListFeedBackShowed = new Dictionary<string, GameObject>();
-        }
-        #endregion Unity
         /// <summary>
         /// Show a feed back
         /// </summary>
         /// <param name="pFeedBack">the feed back to show</param>
         /// <param name="pTransform">the transform for place the feed back</param>
-        protected virtual void ShowFeedBack(AVisualFeedBack pFeedBack, Transform pTransform)
+        /// <returns>the unic id of the feedback</returns>
+        protected virtual string ShowFeedBack(AVisualFeedBack pFeedBack, Transform pTransform)
         {
-            mListFeedBackShowed.Add(pFeedBack.unicId, pFeedBack.Show(pTransform));
+            pFeedBack.Show(mPoolManager, pTransform);
+            items.Add(pFeedBack);
+            return pFeedBack.unicId;
         }
 
         /// <summary>
@@ -46,43 +42,50 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
         /// <param name="pFeedBack">the feedback to show</param>
         /// <param name="pTransform">the transform for place the feed back</param>
         /// <param name="pTime">the time of live of the feedback (the unit is define in the constructor)</param>
-        protected virtual void ShowShortLivedFeedBack(AShortLivedVisualFeedback pFeedBack, Transform pTransform, float pTime)
+        /// <returns>the unic id of the feedback</returns>
+        protected virtual string ShowShortLivedFeedBack(AShortLivedVisualFeedback pFeedBack, Transform pTransform, float pTime)
         {
-            ShowFeedBack(pFeedBack, pTransform);
+            string lId = ShowFeedBack(pFeedBack, pTransform);
 
-            if(pFeedBack.coroutineUnShowInstance != null)
+            if (pFeedBack.coroutineUnShowInstance != null)
             {
                 pFeedBack.timeToWait = pTime;
                 StartCoroutine(pFeedBack.coroutineUnShowInstance);
             }
-            
+            return lId;
         }
 
         /// <summary>
         /// Unshow a  feedback
         /// </summary>
-        /// <param name="pFeedBack">the feedback to unshow</param>
-        protected virtual void UnshowFeedBack(AVisualFeedBack pFeedBack)
+        /// <param name="pFeedBackRef">the unic id of the feedback</param>
+        protected virtual void UnshowFeedBack(string pFeedBackRef)
         {
-            if (mListFeedBackShowed != null && mListFeedBackShowed.ContainsKey(pFeedBack.unicId))
+            AVisualFeedBack lFeedBack = items.FirstOrDefault(pElm => pElm.unicId == pFeedBackRef);
+
+            if(lFeedBack != null)
             {
-                pFeedBack.UnShow(mListFeedBackShowed[pFeedBack.unicId]);
-                mListFeedBackShowed.Remove(pFeedBack.unicId);
+
+                if (lFeedBack is AShortLivedVisualFeedback)
+                {
+                    StophortLivedFeedBackCoroutine(lFeedBack as AShortLivedVisualFeedback);
+                }
+
+                lFeedBack.UnShow(mPoolManager);
+                items.Remove(lFeedBack);
             }
         }
 
         /// <summary>
-        /// Unshow a short lived feedback
+        /// stop the short lived feedback coroutine
         /// </summary>
-        /// <param name="pFeedBack">the feedback to unshow</param>
-        protected virtual void UnshowShortLivedFeedBack(AShortLivedVisualFeedback pFeedBack)
+        /// <param name="pFeedBack">the feedback to stop the coroutine</param>
+        protected virtual void StophortLivedFeedBackCoroutine(AShortLivedVisualFeedback pFeedBack)
         {
             if(pFeedBack.coroutineUnShowInstance != null)
             {
                 StopCoroutine(pFeedBack.coroutineUnShowInstance);
             }
-
-            UnshowFeedBack(pFeedBack);
         }
         #endregion Methods
     }
