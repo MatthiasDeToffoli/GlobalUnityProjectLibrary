@@ -23,7 +23,11 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
         protected override void Awake()
         {
             base.Awake();
-            items = new List<T>();
+
+            if (items == null)
+            {
+                items = new List<T>();
+            }
         }
         #endregion Methods
     }

@@ -50,23 +50,36 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
         /// Show the visual feed back
         /// </summary>
         /// <param name="pPoolManager">the pool manager</param>
-        /// <param name="pNewTransform">the transforms contains position size and rotation of the feed back</param>
+        /// <param name="pTransform">the transforms contains position size and rotation of the feed back</param>
         /// <remarks>it search a game object in the pool</remarks>
-        public virtual void Show(IPoolManager pPoolManager, Transform pNewTransform)
+        public virtual void Show(IPoolManager pPoolManager, Transform pTransform)
+        {
+            this.Show(pPoolManager, pTransform.localScale, pTransform.position, pTransform.rotation);
+        }
+
+        /// <summary>
+        /// Show the visual feed back
+        /// </summary>
+        /// <param name="pPoolManager">the pool manager</param>
+        /// <param name="pScale">the scale of the feedback</param>
+        /// <param name="pPosition">the position of the feddback</param>
+        /// <param name="pRotation">the rotation of the feedback</param>
+        /// <remarks>it search a game object in the pool</remarks>
+        public virtual void Show(IPoolManager pPoolManager, Vector3 pScale, Vector3 pPosition, Quaternion pRotation)
         {
             if (pPoolManager != null)
             {
                 //Get the gameobject from the pool
-                 mObject = pPoolManager.GetElement<GameObject>(mPoolID);
+                mObject = pPoolManager.GetElement<GameObject>(mPoolID);
 
                 //set the local scale
-                mObject.transform.localScale = pNewTransform.localScale;
+                mObject.transform.localScale = pScale;
 
                 //Set the new position
-                mObject.transform.position = pNewTransform.position;
+                mObject.transform.position = pPosition;
 
                 //Set the rotation
-                mObject.transform.rotation = pNewTransform.rotation;
+                mObject.transform.rotation = pRotation;
 
                 mObject.SetActive(true);
             }
