@@ -78,14 +78,34 @@ public class MyManagerWithListOfCarrot : AManagerWithList<Carrot>
 
 ### Menu
 
-#### AMenuScreen
+#### Screens
+##### AMenuScreen
 
 This will represent UI screens (like MainMenu, OptionsMenu...) it has two functions, open and close, wich will SetActive true or false on its gameobject.
+
+##### AValidationScreen
+
+A screen will be used for validate an action it has two buttons, one for validate, the other for invalidate
 
 #### ButtonListeners
 ##### AButtonListener
 
 This class need the UnityEngine.UI.Button component on it object for work. It will listen the events of the button and do actions with it. It will be used for more control and do actions in the C# script and not in the unity Editor, better for encapsulation and control our code. When we click on the button the function OnButtonClicked will be called.
+
+##### BooleanButtonListeners
+###### ABooleanButtonListener.
+Button Listener which send a boolean state when we click on it.
+
+###### BooleanButtonListenerConfigurable
+***ABooleanButtonListener*** which has a state configurable in the inspector
+
+###### ValidateButtonListener.
+
+***ABooleanButtonListener*** which always send true
+
+###### InvalidateButtonListener.
+
+***ABooleanButtonListener*** which always send false
 
 ##### CloseScreenButtonListener
 It's a AButtonListener which will close a screen when the button will be clicked. The screen to close can be the parent GameObject or a screen set in the Unity editor.

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.Screens;
 using UnityEngine;
 
 namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners

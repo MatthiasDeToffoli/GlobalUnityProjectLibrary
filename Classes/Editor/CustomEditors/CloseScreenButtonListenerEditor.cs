@@ -1,5 +1,5 @@
-﻿using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu;
-using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners;
+﻿using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners;
+using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.Screens;
 using UnityEditor;
 using UnityEngine;
 

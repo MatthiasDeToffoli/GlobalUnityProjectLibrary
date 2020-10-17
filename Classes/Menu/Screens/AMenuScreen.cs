@@ -1,6 +1,6 @@
 ﻿using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu
+namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.Screens
 {
     /// <summary>
     /// Parent of all menu screen, implement methods for open and close

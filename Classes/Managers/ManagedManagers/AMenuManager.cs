@@ -1,4 +1,4 @@
-﻿using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu;
+﻿using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.Screens;
 using System.Linq;
 using UnityEngine;
 
