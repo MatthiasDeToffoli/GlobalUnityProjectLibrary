@@ -12,7 +12,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.Screens
         /// <summary>
         /// show the screen
         /// </summary>
-        public virtual void Open()
+        public virtual void Open(params object[] pParams)
         {
             gameObject?.SetActive(true);
         }

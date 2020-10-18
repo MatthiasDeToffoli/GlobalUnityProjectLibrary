@@ -72,7 +72,7 @@ It's a ***AManagedManager*** containing a list typed T called objects. For creat
 public class MyManagerWithListOfCarrot : AManagerWithList<Carrot>
 ```
 
-##### AMenuManager
+##### MenuManager
 
 ***AManagerWithList*** managing all the ***AMenuScreen***. In its Awake, it will active all AMenuScreen it has in it list for call their awake and Start. And in the Init of the Manager it will active false all it screen. You will have to set the screens in the list using the editor of Unity.
 
