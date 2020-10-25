@@ -54,7 +54,7 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
         /// <remarks>it search a game object in the pool</remarks>
         public virtual void Show(IPoolManager pPoolManager, Transform pTransform)
         {
-            this.Show(pPoolManager, pTransform.localScale, pTransform.position, pTransform.rotation);
+            Show(pPoolManager, pTransform.localScale, pTransform.position, pTransform.rotation);
         }
 
         /// <summary>

@@ -18,7 +18,6 @@ namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
         protected abstract IPoolManager mPoolManager
         {
             get;
-            set;
         }
         #endregion Fields
 
