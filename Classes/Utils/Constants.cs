@@ -1,4 +1,4 @@
-﻿namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Utils
+﻿namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Utils
 {
     /// <summary>
     /// All project global constants

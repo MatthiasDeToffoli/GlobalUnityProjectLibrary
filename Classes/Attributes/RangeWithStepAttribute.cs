@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Attributes
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Attributes
 {
     /// <summary>
     /// Attribute for define a range with a step

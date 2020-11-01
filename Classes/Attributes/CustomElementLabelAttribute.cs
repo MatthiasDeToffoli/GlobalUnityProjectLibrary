@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Attributes
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Attributes
 {
     /// <summary>
     /// Attribute for define a costum label for a List or array element

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager
 {
     /// <summary>
     /// Parent of all manager wich manage an objects array

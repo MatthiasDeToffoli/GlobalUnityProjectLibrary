@@ -1,8 +1,8 @@
-﻿using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors;
+﻿using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners
 {
     /// <summary>
     /// Class listen button click

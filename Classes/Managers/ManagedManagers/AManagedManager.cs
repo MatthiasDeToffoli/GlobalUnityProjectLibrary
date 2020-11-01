@@ -1,8 +1,8 @@
-﻿using fr.matthiasdetoffoli.GlobalProjectCode.Interfaces;
-using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors;
-using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Utils;
+﻿using Fr.Matthiasdetoffoli.GlobalProjectCode.Interfaces;
+using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors;
+using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Utils;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager
 {
     /// <summary>
     /// Abstract class for all managers managed by the <see cref="Managers.AMainManager{TMain}" />

@@ -1,8 +1,8 @@
-﻿using fr.matthiasdetoffoli.GlobalProjectCode.Interfaces.Pooling;
+﻿using Fr.Matthiasdetoffoli.GlobalProjectCode.Interfaces.Pooling;
 using System;
 using UnityEngine;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
 {
     /// <summary>
     /// Parent of all visual feed backs managed by the code

@@ -1,9 +1,9 @@
-﻿using fr.matthiasdetoffoli.GlobalProjectCode.Interfaces.Pooling;
-using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Utils.Enums;
+﻿using Fr.Matthiasdetoffoli.GlobalProjectCode.Interfaces.Pooling;
+using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Utils.Enums;
 using System.Collections;
 using UnityEngine;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
 {
     /// <summary>
     /// Visual feedback which is unshow after a time

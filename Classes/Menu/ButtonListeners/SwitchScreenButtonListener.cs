@@ -1,7 +1,7 @@
-﻿using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.Screens;
+﻿using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.Screens;
 using UnityEngine;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners
 {
     /// <summary>
     /// Class used for make a button close a screen and open another one

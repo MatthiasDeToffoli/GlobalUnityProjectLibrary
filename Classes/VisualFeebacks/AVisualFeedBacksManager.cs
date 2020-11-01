@@ -1,9 +1,9 @@
-﻿using fr.matthiasdetoffoli.GlobalProjectCode.Interfaces.Pooling;
-using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager;
+﻿using Fr.Matthiasdetoffoli.GlobalProjectCode.Interfaces.Pooling;
+using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager;
 using System.Linq;
 using UnityEngine;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.VisualFeebacks
 {
     /// <summary>
     /// Abstract class use for manage all visual feedback

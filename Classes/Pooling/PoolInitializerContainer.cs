@@ -1,11 +1,11 @@
-﻿using fr.matthiasdetoffoli.GlobalProjectCode.Classes.Pooling;
-using fr.matthiasdetoffoli.GlobalProjectCode.Interfaces.Pooling.PoolElements;
+﻿using Fr.Matthiasdetoffoli.GlobalProjectCode.Classes.Pooling;
+using Fr.Matthiasdetoffoli.GlobalProjectCode.Interfaces.Pooling.PoolElements;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Pooling
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Pooling
 {
     /// <summary>
     /// Used for initialized the pool (already contain a list of gameobject)

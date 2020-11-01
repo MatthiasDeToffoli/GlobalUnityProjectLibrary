@@ -1,11 +1,11 @@
-﻿using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Attributes;
-using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners.BooleanButtonListeners;
+﻿using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Attributes;
+using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners.BooleanButtonListeners;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.Screens
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.Screens
 {
     /// <summary>
     /// Screen show for validate or not

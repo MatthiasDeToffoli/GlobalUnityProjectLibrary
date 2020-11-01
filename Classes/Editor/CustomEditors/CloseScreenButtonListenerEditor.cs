@@ -1,9 +1,9 @@
-﻿using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners;
-using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.Screens;
+﻿using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners;
+using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.Screens;
 using UnityEditor;
 using UnityEngine;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditors.CustomEditors
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditors.CustomEditors
 {
     /// <summary>
     /// Custom Editor for the close menu button listener class

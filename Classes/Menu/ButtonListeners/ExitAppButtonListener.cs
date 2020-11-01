@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners
 {
     /// <summary>
     /// Component used for make a button close the app

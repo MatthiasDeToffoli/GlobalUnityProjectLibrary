@@ -1,8 +1,8 @@
-﻿using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Attributes;
+﻿using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Attributes;
 using UnityEditor;
 using UnityEngine;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditors.Drawers
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditors.Drawers
 {
     /// <summary>
     /// Property drawer for the attribute RangeWithStep

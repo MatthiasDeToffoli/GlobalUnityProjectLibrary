@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
 {
     /// <summary>
     /// Abstract class implement some functions of MonoBehaviour

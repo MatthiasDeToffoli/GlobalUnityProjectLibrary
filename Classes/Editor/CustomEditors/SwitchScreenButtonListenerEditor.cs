@@ -1,9 +1,9 @@
-﻿using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners;
-using fr.matthiasdetoffoli.GlobalUnityProjectCode.Utils;
+﻿using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners;
+using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Utils;
 using UnityEditor;
 using UnityEngine;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditors.CustomEditors
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditors.CustomEditors
 {
     /// <summary>
     /// Custom Editor for the switch screen button listener class

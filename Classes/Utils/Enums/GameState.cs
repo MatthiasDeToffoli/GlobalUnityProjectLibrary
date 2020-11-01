@@ -1,4 +1,4 @@
-﻿namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Utils.Enums
+﻿namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Utils.Enums
 {
     /// <summary>
     /// Enum used for know the game state

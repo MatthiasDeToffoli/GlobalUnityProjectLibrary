@@ -1,8 +1,8 @@
-﻿using fr.matthiasdetoffoli.GlobalProjectCode.Interfaces;
+﻿using Fr.Matthiasdetoffoli.GlobalProjectCode.Interfaces;
 using System;
 using UnityEngine;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
 {
 
     /// <summary>

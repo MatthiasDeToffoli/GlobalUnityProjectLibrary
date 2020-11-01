@@ -1,4 +1,4 @@
-﻿namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners.BooleanButtonListeners
+﻿namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners.BooleanButtonListeners
 {
     /// <summary>
     /// Delegate will send the state of the button listener

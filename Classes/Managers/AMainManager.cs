@@ -1,11 +1,11 @@
-﻿using fr.matthiasdetoffoli.GlobalProjectCode.Interfaces;
-using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager;
-using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors;
-using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Utils.Enums;
+﻿using Fr.Matthiasdetoffoli.GlobalProjectCode.Interfaces;
+using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager;
+using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors;
+using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Utils.Enums;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers
 {
     /// <summary>
     /// The main manager will managed all the manager

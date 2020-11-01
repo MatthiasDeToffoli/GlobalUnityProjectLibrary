@@ -1,10 +1,10 @@
-﻿using fr.matthiasdetoffoli.GlobalProjectCode.Classes.Pooling;
-using fr.matthiasdetoffoli.GlobalProjectCode.Interfaces.Pooling;
-using fr.matthiasdetoffoli.GlobalProjectCode.Interfaces.Pooling.PoolElements;
-using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager;
+﻿using Fr.Matthiasdetoffoli.GlobalProjectCode.Classes.Pooling;
+using Fr.Matthiasdetoffoli.GlobalProjectCode.Interfaces.Pooling;
+using Fr.Matthiasdetoffoli.GlobalProjectCode.Interfaces.Pooling.PoolElements;
+using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager;
 using UnityEngine;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Pooling
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Pooling
 {
     /// <summary>
     /// Manage all the pools

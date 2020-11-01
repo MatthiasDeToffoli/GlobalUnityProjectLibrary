@@ -1,8 +1,8 @@
-﻿using fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.Screens;
+﻿using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.Screens;
 using System.Linq;
 using UnityEngine;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager
 {
     /// <summary>
     /// manage all the menu

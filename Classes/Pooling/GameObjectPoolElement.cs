@@ -1,8 +1,8 @@
-﻿using fr.matthiasdetoffoli.GlobalProjectCode.Interfaces.Pooling.PoolElements;
+﻿using Fr.Matthiasdetoffoli.GlobalProjectCode.Interfaces.Pooling.PoolElements;
 using System;
 using UnityEngine;
 
-namespace fr.matthiasdetoffoli.GlobalUnityProjectCode.Classes.Pooling
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Pooling
 {
     /// <summary>
     /// Pool element for Game objects
