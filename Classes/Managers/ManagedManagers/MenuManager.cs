@@ -40,9 +40,9 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
             base.Awake();
 
             //Active all pages for call their Awake
-            foreach(AMenuScreen lPage in items)
+            foreach(AMenuScreen lScreen in items)
             {
-                lPage?.gameObject.SetActive(true);
+                lScreen?.gameObject.SetActive(true);
             }
         }
         #endregion Unity
