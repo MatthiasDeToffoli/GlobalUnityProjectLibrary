@@ -3,7 +3,7 @@
 namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Levels
 {
     /// <summary>
-    /// Behavior used for give a comportment to the levels
+    /// Behavior for the levels
     /// </summary>
     /// <seealso cref="AMonoBehaviour"/>
     public abstract class ALevelBehavior : AMonoBehaviour
