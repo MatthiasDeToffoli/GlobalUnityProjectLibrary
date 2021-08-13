@@ -12,13 +12,28 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
     [RequireComponent(typeof(Button))]
     public abstract class AButtonListener : AMonoBehaviour
     {
+        #region Fields
+        /// <summary>
+        /// The button
+        /// </summary>
+        protected Button mButton;
+        #endregion Fields
+
         #region Methods
+        /// <summary>
+        /// Awake of the behaviour
+        /// </summary>
+        protected override void Awake()
+        {
+            base.Awake();
+            mButton = gameObject?.GetComponent<Button>();
+        }
         /// <summary>
         /// Listen all events here
         /// </summary>
         protected override void ListenToEvents()
         {
-            gameObject?.GetComponent<Button>()?.onClick.AddListener(OnButtonClicked);
+            mButton?.onClick.AddListener(OnButtonClicked);
         }
 
         /// <summary>
@@ -31,7 +46,7 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
         /// </summary>
         protected override void UnlistenToEvents()
         {
-            gameObject?.GetComponent<Button>()?.onClick.RemoveListener(OnButtonClicked);
+            mButton?.onClick.RemoveListener(OnButtonClicked);
         }
         #endregion Methods
     }
