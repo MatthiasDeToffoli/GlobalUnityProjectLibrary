@@ -5,9 +5,10 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
     /// <summary>
     /// manage all levels
     /// </summary>
+    /// <typeparam name="T">the type of the levels managed by the manager</typeparam>
     /// <seealso cref="AManagerWithList{T}"/> 
     /// <seealso cref="ALevelBehavior"/>
-    public class LevelsManager : AManagerWithList<ALevelBehavior>
+    public class ALevelsManager<T> : AManagerWithList<T> where T : ALevelBehavior
     {
         #region Fields
         /// <summary>

@@ -33,6 +33,10 @@ public class MyMonoBehaviourSingleton : AMonoBehaviourSingleton<MyMonoBehaviourS
 ```
 So you will can have only one object with this component, if you put two you can select the behavior, it will destroy the old version and keep the new or keep the old and destroy the new but it will never keep several versions. You have another option in the editor for keep the object when you will change scene. So the object will never be destroyed and keep its values.
 
+### Levels
+#### ALevelBehavior
+Behavior for the levels
+
 ### Managers
 #### AMainManager
 
@@ -71,6 +75,9 @@ It's a ***AManagedManager*** containing a list typed T called objects. For creat
 ```C#
 public class MyManagerWithListOfCarrot : AManagerWithList<Carrot>
 ```
+
+##### ALevelManager
+Abstract parent of all ***AManagerWithList*** which will managed the ***ALevelBehavior*** objects
 
 ##### MenuManager
 
