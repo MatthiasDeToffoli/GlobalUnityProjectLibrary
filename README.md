@@ -94,6 +94,10 @@ This will represent UI screens (like MainMenu, OptionsMenu...) it has two functi
 
 A screen will be used for validate an action it has two buttons, one for validate, the other for invalidate
 
+##### AWaitingUserActionScreen
+
+Screen waiting an user action to do something, it will be used, for example, at the first screen in a game waiting a click.
+
 #### ButtonListeners
 ##### AButtonListener
 

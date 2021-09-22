@@ -1,8 +1,5 @@
 ﻿using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Attributes;
 using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners.BooleanButtonListeners;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
 
 namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.Screens
