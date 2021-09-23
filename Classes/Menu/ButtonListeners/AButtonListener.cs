@@ -19,6 +19,31 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
         protected Button mButton;
         #endregion Fields
 
+        #region Properties
+        /// <summary>
+        /// If the button is interactable or not
+        /// </summary>
+        public bool Isinteractable
+        {
+            get
+            {
+                if(mButton != null)
+                {
+                    return mButton.interactable;
+                }
+                return false;
+            }
+
+            set
+            {
+                if(mButton != null)
+                {
+                    mButton.interactable = value;
+                }
+            }
+        }
+        #endregion Properties
+
         #region Methods
         /// <summary>
         /// Awake of the behaviour
