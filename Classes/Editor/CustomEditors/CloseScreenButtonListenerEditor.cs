@@ -1,4 +1,4 @@
-﻿using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners;
+﻿using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners.CloseScreenButtonListeners;
 using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.Screens;
 using UnityEditor;
 using UnityEngine;
@@ -9,8 +9,9 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditors.Cu
     /// Custom Editor for the close menu button listener class
     /// </summary>
     /// <seealso cref="Editor"/> 
-    /// <seealso cref="CloseScreenButtonListener"/>
-    [CustomEditor(typeof(CloseScreenButtonListener),true)]
+    /// <seealso cref="ACloseScreenButtonListener"/>
+    /// <seealso cref="AMenuScreen"/>
+    [CustomEditor(typeof(ACloseScreenButtonListener),true)]
     class CloseScreenButtonListenerEditor : Editor
     {
         #region Constants
@@ -79,9 +80,9 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditors.Cu
             EditorGUILayout.PropertyField(mScreenToCloseIsParentProperty, new GUIContent(SCREEN_TO_CLOSE_IS_PARENT_TITLE));
 
             //we show the screen to close in function of the boolean value
-            if (!mScreenToCloseIsParentProperty.boolValue)
+            if (!mScreenToCloseIsParentProperty.boolValue && mScreenToCloseProperty != null)
             {
-                mScreenToCloseProperty.objectReferenceValue = EditorGUILayout.ObjectField(SCREEN_TO_CLOSE_TITLE, mScreenToCloseProperty.objectReferenceValue, typeof(AMenuScreen), true);
+                EditorGUILayout.PropertyField(mScreenToCloseProperty, new GUIContent(SCREEN_TO_CLOSE_TITLE));
             }
         }
         #endregion Methods

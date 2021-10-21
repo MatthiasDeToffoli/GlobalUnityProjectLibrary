@@ -103,11 +103,17 @@ Screen waiting an user action to do something, it will be used, for example, at 
 
 This class need the UnityEngine.UI.Button component on it object for work. It will listen the events of the button and do actions with it. It will be used for more control and do actions in the C# script and not in the unity Editor, better for encapsulation and control our code. When we click on the button the function OnButtonClicked will be called.
 
+##### ExitAppButtonListener
+
+It's a ***AButtonListener*** which will exit the application when the button will be clicked
+
 ##### BooleanButtonListeners
 ###### ABooleanButtonListener.
+
 Button Listener which send a boolean state when we click on it.
 
 ###### BooleanButtonListenerConfigurable
+
 ***ABooleanButtonListener*** which has a state configurable in the inspector
 
 ###### ValidateButtonListener.
@@ -118,26 +124,45 @@ Button Listener which send a boolean state when we click on it.
 
 ***ABooleanButtonListener*** which always send false
 
-##### CloseScreenButtonListener
-It's a AButtonListener which will close a screen when the button will be clicked. The screen to close can be the parent GameObject or a screen set in the Unity editor.
+##### CloseScreenButtonListeners
+###### ACloseScreenButtonListener
 
-##### ExitAppButtonListener
+Parent of all CloseScreenButtonListener it's used for the custom editor, it give the choice to close the parent Screen or a screen set in the Unity Editor
 
-It's a AButtonListener which will exit the application when the button will be clicked
+###### ATypedCloseScreenButtonListener<T>
 
-##### SwitchScreenButtonListener
-It's a Close Screen Button Listener which will open a screen when the button will be clicked, in more than close another one. The screen to open will be set in the Unity editor.
+It's a ***ACloseScreenButtonListener*** which will close a screen when the button will be clicked. We have to chose the type of the Screen to close.
+
+###### CloseScreenButtonListener
+
+It's a ***ATypedCloseScreenButtonListener*** which type the screen to close with ***AMenuScreen***
+
+###### SwitchScreenButtonListeners
+####### ASwitchScreenButtonListener
+
+Parent of all SwitchScreenButtonListener it's used for the custom editor, it's a child of ***ACloseScreenButtonListener***
+
+####### ATypedSwitchScreenButtonListener<TToOpen,TToClose>
+
+It's a ***ASwitchScreenButtonListener*** which will open a screen when the button will be clicked, in more than close another one. The screen to open will be set in the Unity editor. We have to chose the type of the Screen to open and the one to close.
+
+####### SwitchScreenButtonListener
+It's a ATypedSwitchScreenButtonListene
+r which type the screens to open and to close with ***AMenuScreen***
 
 ### Pooling
 #### GameObjectPoolElement
+
 Pool element which will create game objects
 
 #### PoolInitializerContainer
+
 Pool initializer which contain a list of ***GameObjectElement*** (this last can be updated in unity inspector)
 
 *Overide this class for add more list editables, and overide the property elements for used all your list*
 
 #### APoolManager
+
 Manager which manage all the pools and their container. It wait a typeparam for it Initializer container which is a ***PoolInitializerContainer***.
 
 ### VisualFeebacks

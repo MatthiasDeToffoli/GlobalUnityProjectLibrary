@@ -1,4 +1,4 @@
-﻿using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners;
+﻿using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners.CloseScreenButtonListeners.SwitchScreenButtonListeners;
 using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Utils;
 using UnityEditor;
 using UnityEngine;
@@ -9,8 +9,8 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditors.Cu
     /// Custom Editor for the switch screen button listener class
     /// </summary>
     /// <seealso cref="CloseScreenButtonListenerEditor"/> 
-    /// <seealso cref="SwitchScreenButtonListener"/>
-    [CustomEditor(typeof(SwitchScreenButtonListener),true)]
+    /// <seealso cref="ASwitchScreenButtonListener"/>
+    [CustomEditor(typeof(ASwitchScreenButtonListener),true)]
     internal class SwitchScreenButtonListenerEditor : CloseScreenButtonListenerEditor
     {
         #region Constants
@@ -58,11 +58,14 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.PersonalEditors.Cu
         protected override void CreateProperties()
         {
             //the to open part
-            EditorGUILayout.LabelField(OPEN_TITLE, GUIStyles.titleStyle);
-            EditorGUILayout.Space();
-            EditorGUILayout.PropertyField(mScreenToOpenProperty, new GUIContent(SCREEN_TO_OPEN_TITLE));
-            EditorGUILayout.LabelField(Constants.PersonalEditor.SEPARATOR);
-            EditorGUILayout.Space();
+            if (mScreenToOpenProperty != null)
+            {
+                EditorGUILayout.LabelField(OPEN_TITLE, GUIStyles.titleStyle);
+                EditorGUILayout.Space();
+                EditorGUILayout.PropertyField(mScreenToOpenProperty, new GUIContent(SCREEN_TO_OPEN_TITLE));
+                EditorGUILayout.LabelField(Constants.PersonalEditor.SEPARATOR);
+                EditorGUILayout.Space();
+            }
 
             //the to close part
             EditorGUILayout.LabelField(CLOSE_TITLE, GUIStyles.titleStyle);

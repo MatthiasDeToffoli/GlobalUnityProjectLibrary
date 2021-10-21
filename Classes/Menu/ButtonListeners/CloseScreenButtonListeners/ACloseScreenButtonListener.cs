@@ -1,13 +1,15 @@
 ﻿using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.Screens;
+using System;
+using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
-namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners.CloseScreenButtonListeners
 {
     /// <summary>
     /// Class used for make a button close a screen
     /// </summary>
-    /// <seealso cref="AButtonListener"/>
-    public class CloseScreenButtonListener : AButtonListener
+    public abstract class ACloseScreenButtonListener : AButtonListener
     {
         #region Fields
         /// <summary>
@@ -15,13 +17,6 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
         /// </summary>
         [SerializeField]
         private bool mScreenToCloseIsParent;
-
-        /// <summary>
-        /// the screen to close
-        /// </summary>
-        /// <remarks>if it's the parent the property is not used</remarks>
-        [SerializeField]
-        private AMenuScreen mScreenToClose;
         #endregion //Fields
 
         #region Methods
@@ -33,14 +28,24 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
             if (mScreenToCloseIsParent)
             {
                 //if the screen to close is parent so close the parent
-                gameObject.GetComponentInParent<AMenuScreen>()?.Close();
+                CloseParentScreen();
             }
             else
             {
                 //else close the screen to close
-                mScreenToClose?.Close();
+                CloseNotParentScreen();
             }
         }
+
+        /// <summary>
+        /// Close the parent screen
+        /// </summary>
+        protected abstract void CloseParentScreen();
+
+        /// <summary>
+        /// Close a screen which is not the parent screen
+        /// </summary>
+        protected abstract void CloseNotParentScreen();
         #endregion Methods
     }
 }

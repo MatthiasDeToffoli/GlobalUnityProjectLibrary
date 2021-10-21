@@ -1,20 +1,22 @@
 ﻿using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.Screens;
 using UnityEngine;
 
-namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners
+namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListeners.OpenScreenButtonListeners
 {
     /// <summary>
-    /// Class used for make a button close a screen and open another one
+    /// Button listener which open a screen
     /// </summary>
-    /// <seealso cref="CloseScreenButtonListener"/>
-    public class SwitchScreenButtonListener : CloseScreenButtonListener
+    /// <typeparam name="T">Type of the screen to open</typeparam>
+    /// <seealso cref="AButtonListener"/>
+    /// <seealso cref="AMenuScreen"/>
+    public abstract class AOpenScreenButtonListener<T> : AButtonListener where T : AMenuScreen
     {
         #region Fields
         /// <summary>
         /// The new screen to open
         /// </summary>
         [SerializeField]
-        private AMenuScreen mScreenToOpen;
+        private T mScreenToOpen;
         #endregion //Fields
 
         #region Methods
@@ -23,9 +25,6 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
         /// </summary>
         protected override void OnButtonClicked()
         {
-            //Close the screen to close
-            base.OnButtonClicked();
-
             //open the screen to open
             mScreenToOpen?.Open();
         }
