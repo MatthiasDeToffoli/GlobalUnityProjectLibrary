@@ -9,7 +9,7 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
     /// <typeparam name="T">Type of the screen to open</typeparam>
     /// <seealso cref="AButtonListener"/>
     /// <seealso cref="AMenuScreen"/>
-    public abstract class AOpenScreenButtonListener<T> : AButtonListener where T : AMenuScreen
+    public abstract class AOpenScreenButtonListener<T> : AMenuInteractibleButtonListener where T : AMenuScreen
     {
         #region Fields
         /// <summary>
@@ -25,8 +25,7 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
         /// </summary>
         protected override void OnButtonClicked()
         {
-            //open the screen to open
-            mScreenToOpen?.Open();
+            mMainManager?.menuManager?.OpenScreen(mScreenToOpen);
         }
         #endregion Methods
     }

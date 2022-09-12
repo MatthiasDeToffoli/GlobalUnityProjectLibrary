@@ -26,7 +26,7 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
         /// </summary>
         protected override void CloseParentScreen()
         {
-            gameObject.GetComponentInParent<T>()?.Close();
+            CloseScreen(gameObject.GetComponentInParent<T>());
         }
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
         /// </summary>
         protected override void CloseNotParentScreen()
         {
-            mScreenToClose?.Close();
+            CloseScreen(mScreenToClose);
         }
         #endregion Methods
     }

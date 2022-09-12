@@ -10,6 +10,7 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
     /// <typeparam name="TToClose">Type of the screen to close</typeparam>
     /// <seealso cref="ASwitchScreenButtonListener"/>
     /// <seealso cref="AMenuScreen"/>
+    /// <remarks>We don't use <see cref="ATypedCloseScreenButtonListener{T}"/> for can add the class in the editor</remarks>
     public abstract class ATypedSwitchScreenButtonListener<TToOpen,TToClose> : ASwitchScreenButtonListener
         where TToOpen : AMenuScreen 
         where TToClose : AMenuScreen
@@ -31,23 +32,11 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
 
         #region Methods
         /// <summary>
-        /// call when we click on the button
-        /// </summary>
-        protected override void OnButtonClicked()
-        {
-            //Close the screen to close
-            base.OnButtonClicked();
-
-            //open the screen to open
-            mScreenToOpen?.Open();
-        }
-
-        /// <summary>
         /// Close the parent screen
         /// </summary>
         protected override void CloseParentScreen()
         {
-            gameObject.GetComponentInParent<TToClose>()?.Close();
+            SwitchScreen(gameObject.GetComponentInParent<TToClose>());
         }
 
         /// <summary>
@@ -55,7 +44,16 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
         /// </summary>
         protected override void CloseNotParentScreen()
         {
-            mScreenToClose?.Close();
+            SwitchScreen(mScreenToClose);
+        }
+
+        /// <summary>
+        /// Sweetch the screens
+        /// </summary>
+        /// <param name="pScreenToClose">the screen to close</param>
+        private void SwitchScreen(AMenuScreen pScreenToClose)
+        {
+            mMainManager?.menuManager?.SwitchScreen(pScreenToClose, mScreenToOpen);
         }
         #endregion Methods
     }

@@ -9,7 +9,7 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
     /// <summary>
     /// Class used for make a button close a screen
     /// </summary>
-    public abstract class ACloseScreenButtonListener : AButtonListener
+    public abstract class ACloseScreenButtonListener : AMenuInteractibleButtonListener
     {
         #region Fields
         /// <summary>
@@ -46,6 +46,15 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Menu.ButtonListene
         /// Close a screen which is not the parent screen
         /// </summary>
         protected abstract void CloseNotParentScreen();
+
+        /// <summary>
+        /// Close a screen
+        /// </summary>
+        /// <param name="pScreenToClose">Screen to close</param>
+        protected void CloseScreen(AMenuScreen pScreenToClose)
+        {
+            mMainManager?.menuManager?.CloseScreen(pScreenToClose);
+        }
         #endregion Methods
     }
 }

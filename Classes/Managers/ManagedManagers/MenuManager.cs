@@ -59,7 +59,6 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
             }
         }
 
-
         /// <summary>
         /// switch two screen
         /// </summary>
@@ -102,8 +101,7 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
             
             if(lCanOpen)
             {
-                items[pIndexToClose]?.Close();
-                items[pIndexToOpen]?.Open(pScreenToOpenParams);
+                SwitchScreen(items[pIndexToClose], items[pIndexToOpen], pScreenToOpenParams);
             }
         }
 
@@ -138,11 +136,22 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
                 lCanOpen = false;
             }
 
-            if(lCanOpen)
+            if (lCanOpen)
             {
-                pScreenToClose.Close();
-                pScreenToOpen.Open(pScreenToOpenParams);
+                SwitchScreen(pScreenToClose, pScreenToOpen, pScreenToOpenParams);
             }
+        }
+
+        /// <summary>
+        /// Do the action to switch screens
+        /// </summary>
+        /// <param name="pScreenToClose"></param>
+        /// <param name="pScreenToOpen"></param>
+        /// <param name="pScreenToOpenParams">the parametters of the screen to open</param>
+        public virtual void SwitchScreen(AMenuScreen pScreenToClose, AMenuScreen pScreenToOpen, params object[] pScreenToOpenParams)
+        {
+            pScreenToClose?.Close();
+            pScreenToOpen?.Open(pScreenToOpenParams);
         }
 
         /// <summary>
@@ -168,7 +177,7 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
             }
             else
             {
-                items[pIndexToOpen]?.Open(pParams);
+                OpenScreen(items[pIndexToOpen], pParams);
             }
         }
 
@@ -186,8 +195,18 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
             }
             else
             {
-                pScreenToOpen.Open(pParams);
+                OpenScreen(pScreenToOpen, pParams);
             }
+        }
+
+        /// <summary>
+        /// Do the action to open a screen
+        /// </summary>
+        /// <param name="pScreenToOpen"></param>
+        /// <param name="pParams">the parametters of the screen to open</param>
+        public virtual void OpenScreen(AMenuScreen pScreenToOpen, params object[] pParams)
+        {
+            pScreenToOpen?.Open(pParams);
         }
 
         /// <summary>
@@ -211,7 +230,7 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
             }
             else
             {
-                items[pIndexToClose]?.Close();
+                CloseScreen(items[pIndexToClose]);
             }
         }
 
@@ -228,8 +247,17 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
             }
             else
             {
-                pScreenToClose.Close();
+                CloseScreen(pScreenToClose);
             }
+        }
+
+        /// <summary>
+        /// Do the action to close a screen
+        /// </summary>
+        /// <param name="pScreenToClose"></param>
+        public virtual void CloseScreen(AMenuScreen pScreenToClose)
+        {
+            pScreenToClose?.Close();
         }
         #endregion Methods
     }

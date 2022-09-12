@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
@@ -26,6 +27,17 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
         private IEnumerator AfterStartCoroutineHandler;
         #endregion Fields
 
+        #region Properties
+        /// <summary>
+        /// Unic ID of the behaviour
+        /// </summary>
+        public string ID
+        {
+            get;
+            private set;
+        }
+        #endregion //Properties
+
         #region Methods
 
         #region Unity
@@ -35,6 +47,7 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors
         protected virtual void Awake() 
         {
             AfterStartCoroutineHandler = AfterStartCoroutine();
+            ID = Guid.NewGuid().ToString();
         }
 
         /// <summary>

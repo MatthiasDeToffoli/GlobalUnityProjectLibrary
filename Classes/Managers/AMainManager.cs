@@ -2,6 +2,7 @@
 using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedManager;
 using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.MonoBehaviors;
 using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Utils.Enums;
+using Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Interfaces;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,8 +14,16 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers
     /// <typeparam name="TMain">the type of the main manager use for the singleton instance</typeparam>
     /// <seealso cref="AMonoBehaviourSingleton{T}"/>
     /// <seealso cref="IManager"/>
-    public abstract class AMainManager<TMain> : AMonoBehaviourSingleton<TMain>, IManager where TMain : AMonoBehaviour, IManager, ISingleton
+    public abstract class AMainManager<TMain> : AMonoBehaviourSingleton<TMain>, IMainManager 
+        where TMain : AMonoBehaviour, IMainManager, ISingleton
     {
+        #region Fields
+        /// <summary>
+        /// The menu manager
+        /// </summary>
+        protected MenuManager mMenuManager;
+        #endregion Fields
+
         #region Properties
         /// <summary>
         /// All managers managed by the main manager
@@ -27,6 +36,21 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers
         /// </summary>
         [HideInInspector]
         public GameState currentGameState;
+
+        /// <summary>
+        /// The menu manager
+        /// </summary>
+        public MenuManager menuManager
+        {
+            get
+            {
+                if(mMenuManager == null)
+                {
+                    mMenuManager = GetFirstManager<MenuManager>();
+                }
+                return mMenuManager;
+            }
+        }
         #endregion Properties
 
         #region Method
