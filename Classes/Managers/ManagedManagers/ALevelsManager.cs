@@ -55,10 +55,7 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
         /// <param name="pIndex"></param>
         public virtual void SelectLevel(int pIndex)
         {
-            if(mCurrentIndexSelected >= 0 && items.Count > mCurrentIndexSelected)
-            {
-                items[mCurrentIndexSelected].Deactivate();
-            }
+            DeactivateCurrentLevel();
 
             if (pIndex >= 0 && items.Count > pIndex)
             {
@@ -66,6 +63,26 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers.ManagedMa
             }
 
             mCurrentIndexSelected = pIndex;
+        }
+
+        /// <summary>
+        /// Clear the current map
+        /// </summary>
+        public virtual void ClearCurrentLevel()
+        {
+            DeactivateCurrentLevel();
+            mCurrentIndexSelected = -1;
+        }
+
+        /// <summary>
+        /// Deactivate current level
+        /// </summary>
+        private void DeactivateCurrentLevel()
+        {
+            if (mCurrentIndexSelected >= 0 && items.Count > mCurrentIndexSelected)
+            {
+                items[mCurrentIndexSelected].Deactivate();
+            }
         }
         #endregion Methods
     }
