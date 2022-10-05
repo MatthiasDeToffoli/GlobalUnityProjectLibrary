@@ -21,7 +21,7 @@ namespace Fr.Matthiasdetoffoli.GlobalUnityProjectCode.Classes.Managers
         /// <summary>
         /// The menu manager
         /// </summary>
-        protected MenuManager mMenuManager;
+        private MenuManager mMenuManager;
         #endregion Fields
 
         #region Properties
